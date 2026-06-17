@@ -1,0 +1,333 @@
+/* src/styles/Pages.css */
+
+/* Internal Page Heroes */
+.page-hero {
+  padding: 120px 0 80px;
+  background: var(--grad-hero);
+  border-bottom: 1px solid var(--border-light);
+  text-align: center;
+  position: relative;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(212, 163, 115, 0.04) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(0, 109, 119, 0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.page-hero .subtitle {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-hero h1 {
+  font-size: var(--h1-fs);
+  color: var(--dark-text);
+  margin-top: 1rem;
+  line-height: 1.25;
+  font-weight: 500;
+  font-family: var(--font-heading);
+}
+
+.page-hero p {
+  max-width: 750px;
+  margin: 1.5rem auto 0;
+  color: var(--body-text);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Sidebar layout panels */
+.sidebar-card {
+  background: var(--grad-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-glass);
+  position: sticky;
+  top: 110px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.sidebar-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-gold);
+}
+
+.sidebar-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.sidebar-desc {
+  font-size: 0.95rem;
+  color: var(--body-text);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+/* Luxury Form Styles */
+.form-container {
+  background: var(--white);
+  padding: 4rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.form-container:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-gold);
+}
+
+.form-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-control {
+  padding: 0.95rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-medium);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+  width: 100%;
+  color: var(--dark-text);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--secondary);
+  background-color: var(--white);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Doctor Profiles in About Page */
+.doc-profile-card {
+  background: var(--white);
+  padding: 5rem 4.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 5rem;
+  transition: var(--transition-smooth);
+}
+
+.doc-profile-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-gold);
+}
+
+.doc-header {
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.doc-name {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.doc-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--secondary);
+  letter-spacing: 0.02em;
+}
+
+.doc-cv-section {
+  margin-top: 3rem;
+}
+
+.doc-cv-title {
+  font-size: 1.35rem;
+  color: var(--dark-text);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  border-left: 3px solid var(--secondary);
+  padding-left: 1rem;
+}
+
+/* Service Category Cards */
+.service-category-card {
+  background: var(--section-alt);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.service-category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md), var(--shadow-teal-glow);
+  border-color: var(--secondary);
+}
+
+.service-subgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+@media (max-width: 480px) {
+  .service-subgrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-hero {
+    padding: 100px 0 60px;
+  }
+  .form-container {
+    padding: 3rem;
+  }
+  .doc-profile-card {
+    padding: 3rem;
+  }
+}
+
+/* About Page Custom Layout Cards */
+.about-mission-box {
+  background: var(--section-alt);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  transition: var(--transition-smooth);
+}
+
+.about-mission-box:hover {
+  box-shadow: var(--shadow-md), var(--shadow-teal-glow);
+  border-color: var(--secondary);
+}
+
+.about-why-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  transition: var(--transition-smooth);
+}
+
+.about-why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-gold);
+}
+
+/* Locations Page Custom Layout Cards */
+.location-item-card {
+  background: var(--section-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 4rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.location-item-card:hover {
+  box-shadow: var(--shadow-md), var(--shadow-teal-glow);
+  border-color: var(--secondary);
+}
+
+.location-sidebar-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.location-sidebar-card:hover {
+  box-shadow: var(--shadow-md), var(--shadow-gold-glow);
+  border-color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 80px 0 50px;
+  }
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .form-container {
+    padding: 2rem 1.25rem !important;
+  }
+  .doc-profile-card {
+    padding: 2.5rem 1.25rem !important;
+  }
+  .service-category-card {
+    padding: 2rem 1.25rem !important;
+  }
+  .about-mission-box, .location-sidebar-card {
+    padding: 2rem 1.25rem !important;
+  }
+  .about-why-card {
+    padding: 1.75rem 1.25rem !important;
+  }
+  .location-item-card {
+    padding: 2.5rem 1.25rem !important;
+  }
+  .service-detail-page .col-8 > div {
+    padding-right: 0 !important;
+  }
+  .doc-name {
+    font-size: 2.1rem;
+  }
+}

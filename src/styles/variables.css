@@ -1,0 +1,91 @@
+/* src/styles/variables.css */
+:root {
+  /* Premium Award-Winning Luxury Color Palette */
+  --primary: #0A3D44;         /* Prestigious Deep Teal-Navy */
+  --secondary: #C49A45;       /* Warm Metallic Gold */
+  --accent: #E68D9C;          /* Vibrant Rose Gold / Blush pink */
+  --background: #FDFBF7;      /* Warm Alabaster/Ivory background */
+  --section-alt: #F7F1E6;     /* Champagne/Ivory secondary background */
+  --dark-text: #0E1D20;       /* Rich Deep Charcoal-Teal for luxury headings */
+  --body-text: #455255;       /* Steel Slate for readability */
+  --success: #059669;         /* Premium Emerald */
+  --white: #FFFFFF;
+
+  /* Glassmorphism & Gold Borders */
+  --border-light: rgba(10, 61, 68, 0.08);
+  --border-medium: rgba(10, 61, 68, 0.16);
+  --border-gold: rgba(196, 154, 69, 0.35);
+  --border-glass: rgba(255, 255, 255, 0.65);
+  
+  /* Rich Gradients */
+  --grad-hero: linear-gradient(135deg, rgba(247, 241, 230, 0.95) 0%, rgba(230, 141, 156, 0.12) 60%, rgba(10, 61, 68, 0.04) 100%);
+  --grad-primary: linear-gradient(135deg, #0A3D44 0%, #052125 100%);
+  --grad-secondary: linear-gradient(135deg, #C49A45 0%, #9F7729 100%);
+  --grad-accent: linear-gradient(135deg, #E68D9C 0%, #CD6F7E 100%);
+  --grad-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.65) 100%);
+  --grad-glow: radial-gradient(circle, rgba(196, 154, 69, 0.15) 0%, rgba(10, 61, 68, 0.02) 70%, transparent 100%);
+  --grad-teal-glow: radial-gradient(circle, rgba(10, 61, 68, 0.08) 0%, rgba(230, 141, 156, 0.03) 50%, transparent 100%);
+  
+  /* Floating Shadows */
+  --shadow-sm: 0 4px 15px rgba(10, 61, 68, 0.03);
+  --shadow-md: 0 12px 35px rgba(10, 61, 68, 0.08);
+  --shadow-lg: 0 25px 60px rgba(10, 61, 68, 0.12);
+  --shadow-gold: 0 12px 35px rgba(196, 154, 69, 0.2);
+  --shadow-gold-glow: 0 0 30px rgba(196, 154, 69, 0.35);
+  --shadow-teal-glow: 0 0 30px rgba(10, 61, 68, 0.25);
+
+  /* Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-fallback: sans-serif;
+
+  /* Desktop Typography Scale */
+  --h1-fs: 56px;
+  --h2-fs: 42px;
+  --h3-fs: 30px;
+  --body-fs: 18px;
+
+  /* Line Height & Letter Spacing */
+  --lh-default: 1.8;
+  --lh-heading: 1.25;
+  --ls-heading: -0.01em;
+  --ls-body: 0.01em;
+  
+  /* Layout Metrics */
+  --container-max: 1400px;
+  --content-max: 1200px;
+  
+  /* Spacing Scale (Desktop: 120px) */
+  --section-spacing: 120px;
+  
+  /* Borders & Transitions */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  /* Cubic Bezier Transitions */
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.25s ease;
+}
+
+/* Tablet Overrides (Viewport width <= 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --h1-fs: 44px;
+    --h2-fs: 34px;
+    --h3-fs: 24px;
+    --section-spacing: 90px;
+  }
+}
+
+/* Mobile Overrides (Viewport width <= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --h1-fs: 34px;
+    --h2-fs: 28px;
+    --h3-fs: 22px;
+    --body-fs: 16px;
+    --section-spacing: 70px;
+  }
+}
