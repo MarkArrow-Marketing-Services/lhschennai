@@ -12,7 +12,11 @@ export default function BlogCard({ slug, title, category, snippet }) {
         <span className="blog-card-meta">{category}</span>
         <h3>{title}</h3>
         <p>{snippet}</p>
-        <Link to={`/insights/${slug}`} className="service-card-link" style={{ marginTop: "auto" }}>
+        <Link
+          to={`/insights/${slug}`}
+          className="service-card-link"
+          style={{ marginTop: "auto" }}
+        >
           <span>Read Article</span>
           <ArrowRight size={16} />
         </Link>
