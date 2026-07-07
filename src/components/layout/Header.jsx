@@ -8,9 +8,12 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
+    setIsMobile(window.innerWidth <= 1024);
+
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
@@ -28,6 +31,21 @@ export default function Header() {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
   }, [location]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      setActiveDropdown(null);
+    }
+  }, [mobileMenuOpen]);
 
   const toggleDropdown = (index) => {
     if (activeDropdown === index) {
@@ -192,19 +210,11 @@ export default function Header() {
             <Link to="/contact">Contact</Link>
           </li>
 
-          {mobileMenuOpen && (
-            <li
-              className="nav-item"
-              style={{ marginTop: "2rem", width: "100%" }}
-            >
+          {mobileMenuOpen && isMobile && (
+            <li className="nav-item mobile-cta">
               <Link
                 to="/book-appointment"
-                className="btn btn-primary"
-                style={{
-                  display: "block",
-                  textAlign: "center",
-                  padding: "0.8rem",
-                }}
+                className="btn btn-primary mobile-book"
               >
                 Book Appointment
               </Link>
@@ -214,9 +224,11 @@ export default function Header() {
       </nav>
 
       <div className="header-actions">
-        <Link to="/book-appointment" className="btn btn-appt btn-primary">
-          Book Appointment
-        </Link>
+        {(!isMobile || !mobileMenuOpen) && (
+          <Link to="/book-appointment" className="btn btn-appt btn-primary">
+            Book Appointment
+          </Link>
+        )}
 
         <button
           className="menu-toggle"
