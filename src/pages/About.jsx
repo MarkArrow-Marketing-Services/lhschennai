@@ -170,24 +170,56 @@ export default function About() {
                   ))}
 
                   {/* CV Subsections */}
-                  {doc.sections.map((sec, secIdx) => (
-                    <div key={secIdx} className="doc-cv-section">
-                      <h4 className="doc-cv-title">{sec.heading}</h4>
-                      {sec.paragraphs.map((para, paraIdx) => (
-                        <p
-                          key={paraIdx}
-                          style={{
-                            fontSize: "0.95rem",
-                            lineHeight: "1.7",
-                            color: "var(--body-text)",
-                            marginBottom: "1rem",
-                          }}
-                        >
-                          {para}
-                        </p>
-                      ))}
+                  {doc.id === "dr-parimalam-ramanathan" && doc.timelineIntro ? (
+                    <div className="doc-timeline-wrapper">
+                      <div className="doc-timeline-intro">
+                        <span className="doc-timeline-label">
+                          Career Timeline
+                        </span>
+                        {doc.timelineIntro.map((line, lineIdx) => (
+                          <p key={lineIdx} className="doc-timeline-intro-text">
+                            {line}
+                          </p>
+                        ))}
+                      </div>
+
+                      <div className="doc-timeline-listing">
+                        {doc.timelineSections.map((sec, secIdx) => (
+                          <div key={secIdx} className="doc-timeline-card">
+                            <h4>{sec.heading}</h4>
+                            <ul>
+                              {sec.items.map((item, itemIdx) => (
+                                <li key={itemIdx}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+
+                      <p className="doc-timeline-closing">
+                        {doc.timelineClosing}
+                      </p>
                     </div>
-                  ))}
+                  ) : (
+                    doc.sections.map((sec, secIdx) => (
+                      <div key={secIdx} className="doc-cv-section">
+                        <h4 className="doc-cv-title">{sec.heading}</h4>
+                        {sec.paragraphs.map((para, paraIdx) => (
+                          <p
+                            key={paraIdx}
+                            style={{
+                              fontSize: "0.95rem",
+                              lineHeight: "1.7",
+                              color: "var(--body-text)",
+                              marginBottom: "1rem",
+                            }}
+                          >
+                            {para}
+                          </p>
+                        ))}
+                      </div>
+                    ))
+                  )}
                 </div>
 
                 {/* Right Column - Brief Quick facts / qualifications card */}

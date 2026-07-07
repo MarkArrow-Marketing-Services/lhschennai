@@ -52,9 +52,18 @@ export default function Header() {
   return (
     <header className={scrolled ? "scrolled" : ""}>
       <div className="logo">
-        <Link to="/">
-          <span>LONDON HARLEY STREET</span>
-          <span className="logo-sub">Women & Fertility Centre</span>
+        <Link to="/" className="logo-link">
+          <img
+            src="/site-logo.png"
+            alt="London Harley Street logo"
+            className="logo-mark"
+          />
+          <div className="logo-text">
+            <div className="logo-title">LONDON HARLEY STREET WOMEN</div>
+            <div className="logo-subtitle">IVF AND FERTILITY CENTRE</div>
+            <div className="logo-location">@ OMR - Chennai</div>
+            <div className="logo-branches">PERUNGUDI - THAZAMBUR</div>
+          </div>
         </Link>
       </div>
 

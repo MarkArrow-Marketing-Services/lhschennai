@@ -197,6 +197,77 @@
   padding-left: 1rem;
 }
 
+.doc-timeline-wrapper {
+  margin-top: 2rem;
+}
+
+.doc-timeline-intro {
+  background: linear-gradient(135deg, rgba(0, 109, 119, 0.06) 0%, rgba(212, 163, 115, 0.1) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.35rem 1.4rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-timeline-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.doc-timeline-intro-text {
+  color: var(--dark-text);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 500;
+}
+
+.doc-timeline-listing {
+  display: grid;
+  gap: 1rem;
+}
+
+.doc-timeline-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-timeline-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--primary);
+  margin: 0 0 0.8rem;
+}
+
+.doc-timeline-card ul {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--body-text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.doc-timeline-card li {
+  margin-bottom: 0.35rem;
+}
+
+.doc-timeline-closing {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--body-text);
+  font-style: italic;
+}
+
 /* Service Category Cards */
 .service-category-card {
   background: var(--section-alt);
