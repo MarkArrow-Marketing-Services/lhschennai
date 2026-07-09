@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
+import siteLogo from "../../assets/Harley London Street medical emblem.png";
 import "../../styles/Header.css";
 
 export default function Header() {
@@ -72,7 +73,7 @@ export default function Header() {
       <div className="logo">
         <Link to="/" className="logo-link">
           <img
-            src="/site-logo.png"
+            src={siteLogo}
             alt="London Harley Street logo"
             className="logo-mark"
           />

@@ -356,15 +356,58 @@ header.scrolled .nav-item > a {
 
   .logo {
     gap: 0.5rem;
+    max-width: 100%;
   }
 
   .logo-mark {
     width: 56px;
     height: 56px;
+    flex-shrink: 0;
   }
 
   .logo-text {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .logo-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary);
+    letter-spacing: -0.01em;
+    line-height: 1;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .logo-subtitle {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .logo-location,
+  .logo-branches {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-top: 1px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .logo-sub {
@@ -378,9 +421,61 @@ header.scrolled .nav-item > a {
 }
 
 @media (max-width: 640px) {
+  .logo {
+    gap: 0.4rem;
+  }
+
+  .logo-mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-title {
+    font-size: 0.7rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .logo-subtitle {
+    font-size: 0.6rem;
+    margin-top: 1px;
+  }
+
+  .logo-location,
+  .logo-branches {
+    font-size: 0.55rem;
+    margin-top: 0px;
+  }
+
   .logo-sub {
     font-size: 0.45rem;
     letter-spacing: 0.08em;
     max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    gap: 0.35rem;
+  }
+
+  .logo-mark {
+    width: 44px;
+    height: 44px;
+  }
+
+  .logo-title {
+    font-size: 0.65rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .logo-subtitle {
+    font-size: 0.55rem;
+    margin-top: 1px;
+  }
+
+  .logo-location,
+  .logo-branches {
+    font-size: 0.5rem;
+    margin-top: 0px;
   }
 }
