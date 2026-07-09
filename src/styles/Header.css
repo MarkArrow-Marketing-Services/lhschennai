@@ -383,6 +383,7 @@ header.scrolled .nav-item > a {
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
   }
 
@@ -433,6 +434,7 @@ header.scrolled .nav-item > a {
   .logo-title {
     font-size: 0.7rem;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 
   .logo-subtitle {
@@ -466,6 +468,7 @@ header.scrolled .nav-item > a {
   .logo-title {
     font-size: 0.65rem;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 
   .logo-subtitle {
