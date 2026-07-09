@@ -74,7 +74,11 @@ export const doctorsData = [
           "Early Career (UK)",
           "SHO (Senior House Officer), Liverpool Women's Hospital, Liverpool, UK.",
           "Specialist Registrar, Royal London Hospital, London, UK.",
-          "Consultant Roles",
+        ],
+      },
+      {
+        heading: "Consultant Roles",
+        items: [
           "Post-CCT Consultant, Newham General Hospital, London, UK.",
           "Consultant in High-Risk Pregnancy & Gynaecology, Kingston Hospital, London, UK.",
           "Fertility Consultant, Centre for Reproductive & Genetic Health, London, UK.",
@@ -125,16 +129,30 @@ export const doctorsData = [
           "Urine dipstick and C&S in pregnancy clinics (Birmingham).",
           "Cervical cancer follow-up.",
           "Colposcopy and cervical smear management (Manchester).",
-          "Europe",
+        ],
+      },
+      {
+        heading: "Europe",
+        items: [
           "Cervical cancer management (European Society, France).",
           "Ectopic pregnancy (International Society of Obstetrics & Gynaecology, Czech Republic).",
-          "Denmark",
-          "Management of pregnancy of unknown location.",
-          "Scotland",
-          "Implementation of NICE guidelines.",
-          "Malaysia",
-          "Chronic pelvic pain management (FIGO Enigma).",
-          "India",
+        ],
+      },
+      {
+        heading: "Denmark",
+        items: ["Management of pregnancy of unknown location."],
+      },
+      {
+        heading: "Scotland",
+        items: ["Implementation of NICE guidelines."],
+      },
+      {
+        heading: "Malaysia",
+        items: ["Chronic pelvic pain management (FIGO Enigma)."],
+      },
+      {
+        heading: "India",
+        items: [
           "Fertility preservation in cancer patients (Agra).",
           "Panel discussion speaker at the All India Congress of Gynaecologists (Chennai).",
         ],
