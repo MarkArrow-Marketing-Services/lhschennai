@@ -42,6 +42,11 @@ export const doctorsData = [
     name: "Dr. Parimalam Ramanathan",
     title: "Obstetrician | Gynaecologist | Fertility Specialist in Chennai",
     imageCategory: "Doctor Consultation",
+    homeCard: {
+      qualifications:
+        "MBBS, DNB, MD, MRCOG, FRCOG (UK), CCT in Obstetrics & Gynaecology",
+      experience: "Over 30+ Years of Clinical Experience",
+    },
     profile: [
       "Dr. Parimalam Ramanathan is a highly expert Obstetrician, Gynaecologist, and Fertility Specialist based in Chennai. With over 30+ of Clinical experience, she is widely recognized for delivering the advanced, ethical, and patient-possessed women’s healthcare.",
       "She is the Founder of London Harley Fertility and Women’s Health Centre, located in Perungudi (OMR, behind Apollo Hospital). Her clinical practice is inspired by the international standards, particularly the renowned London Harley Street model of evidence-based and ethical care.",
@@ -196,6 +201,11 @@ export const doctorsData = [
     name: "Dr. Leonard Sagayanathan",
     title: "Radiologist & Fetal Medicine Specialist",
     imageCategory: "Ultrasound",
+    homeCard: {
+      qualifications:
+        "FMF Fellowship in Fetal Medicine (UK), DMRD, DNB, RCOG/RCR Obstetric Ultrasound Diploma",
+      experience: "Over 22+ Years of Clinical Practice",
+    },
     profile: [
       "Dr. Leonard Sagayanathan is a highly experienced radiologist and fetal medicine specialist with over 22+ years of experience in clinical practice. He is among the first Indian doctors to receive the Fellowship in Fetal Medicine from the Fetal Medicine Foundation (FMF) based in United Kingdom, where he trained under the Professor Kypros Nicolaides between 2004 to 2007. His expertise into advanced fetal care, musculoskeletal (MSK) ultrasound, and general radiology.",
       "He holds a specialization in the fetal care and musculoskeletal ultrasound, with certification from the European Society of Musculoskeletal Radiology. His diagnostic proficiency includes the urology, vascular, general, and small parts ultrasound. Additionally, Dr. Leonard has contributed to medical research, specifically in nuchal translucency scans and cervical screening for preterm labor during his tenure period at King’s College Hospital in London, UK",

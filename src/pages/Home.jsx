@@ -354,15 +354,8 @@ export default function Home() {
                   name={doc.name}
                   title={doc.title}
                   profileSummary={doc.profile?.[0] ?? ""}
-                  qualifications={
-                    (doc.sections?.[0]?.paragraphs?.[0] ?? "").slice(0, 80) +
-                    "..."
-                  }
-                  experience={
-                    doc.id === "dr-parimalam-ramanathan"
-                      ? "Over 30+ Years of Clinical Experience"
-                      : "Over 22+ Years of Clinical Practice"
-                  }
+                  qualifications={doc.homeCard?.qualifications ?? ""}
+                  experience={doc.homeCard?.experience ?? ""}
                 />
               </div>
             ))}
