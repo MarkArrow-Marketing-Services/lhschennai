@@ -14,9 +14,9 @@ export const homeContent = {
       detail: "Over 31 Years of Medical Expertise",
     },
     {
-      value: "700+",
+      value: "7000+",
       label: "patients",
-      detail: "700+ Lives Impacted Positively",
+      detail: "7000+ Lives Impacted Positively",
     },
     { value: "4.7", label: "STAR RATING", detail: "4.7 Rating on Google" },
     { value: "2+", label: "Branches", detail: "2+ Location" },
@@ -952,7 +952,7 @@ export const detailedServices = [
 
 export const journeyTimeline = [
   {
-    year: "2017",
+    year: "2016",
     event:
       "Established in Perungudi to deliver the high-quality women's healthcare and advanced fertility treatments under international protocols inspired by London Harley Street standards.",
   },
@@ -991,7 +991,7 @@ export const locationData = [
     services:
       "Specializing in gynecology, obstetrics, reproductive medicine, advanced IVF, and fetal scanning.",
     details:
-      "Established in Perungudi in 2017, the centre has quickly gained recognition for its best in class while maintaining the medical standards and patient-focused approach.",
+      "Established in Perungudi in 2016, the centre has quickly gained recognition for its best in class while maintaining the medical standards and patient-focused approach.",
   },
   {
     name: "Thalambur Branch",
