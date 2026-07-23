@@ -10,8 +10,12 @@ import {
 import SectionTitle from "../components/common/SectionTitle";
 import Button from "../components/common/Button";
 import CTASection from "../components/common/CTASection";
+import VideoHighlightCard from "../components/common/VideoHighlightCard";
 import docFemale from "../assets/images/Dr. Parimalam Ramanathan.png";
 import docMale from "../assets/images/Dr. Leonard Sagayanathan.jpg";
+import doctorVideo from "../assets/videos/Chennai best doctor.mp4";
+import awardVideo from "../assets/videos/India_s Most Prominent Healthcare Awards-2018(360P)_1.mp4";
+import womensDayVideo from "../assets/videos/Wishing womens day.mp4";
 
 export default function About() {
   const { hash } = useLocation();
@@ -168,6 +172,43 @@ export default function About() {
                       {p}
                     </p>
                   ))}
+
+                  {doc.id === "dr-parimalam-ramanathan" && (
+                    <div
+                      className="doc-video-stack"
+                      style={{ marginTop: "2.5rem" }}
+                    >
+                      <VideoHighlightCard
+                        eyebrow="Featured Recognition"
+                        title="Recognised as a Leading Doctor in Chennai"
+                        description="A warm, credibility-led feature highlighting Dr. Parimalam Ramanathan’s professional standing and patient trust."
+                        videoSrc={doctorVideo}
+                        altText="Video featuring Dr. Parimalam Ramanathan as a leading doctor in Chennai"
+                      />
+
+                      <div style={{ marginTop: "1.25rem" }}>
+                        <VideoHighlightCard
+                          eyebrow="Professional Recognition"
+                          title="India’s Most Prominent Healthcare Awards 2018"
+                          description="A polished recognition feature that reinforces the clinic’s commitment to excellence and medical distinction."
+                          videoSrc={awardVideo}
+                          altText="Video highlighting Dr. Parimalam Ramanathan's healthcare award recognition"
+                          variant="compact"
+                        />
+                      </div>
+
+                      <div style={{ marginTop: "1.25rem" }}>
+                        <VideoHighlightCard
+                          eyebrow="Doctor's Message"
+                          title="A Personal Women’s Day Message"
+                          description="A heartfelt, human-centred video that reflects compassion, community connection, and patient care."
+                          videoSrc={womensDayVideo}
+                          altText="Video message from Dr. Parimalam Ramanathan for Women's Day"
+                          variant="compact"
+                        />
+                      </div>
+                    </div>
+                  )}
 
                   {/* CV Subsections */}
                   {doc.id === "dr-parimalam-ramanathan" && doc.timelineIntro ? (

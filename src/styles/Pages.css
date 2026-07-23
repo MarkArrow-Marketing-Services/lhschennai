@@ -268,6 +268,82 @@
   font-style: italic;
 }
 
+/* Video Highlight Cards */
+.video-highlight-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(244, 247, 248, 0.96) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+}
+
+.video-highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-gold);
+}
+
+.video-highlight-card--compact {
+  padding: 1.1rem;
+}
+
+.video-highlight-body {
+  margin-bottom: 1rem;
+}
+
+.video-highlight-label {
+  display: inline-block;
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+
+.video-highlight-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.video-highlight-card p {
+  margin: 0;
+  color: var(--body-text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.video-highlight-media {
+  border-radius: calc(var(--radius-lg) - 4px);
+  overflow: hidden;
+  border: 1px solid rgba(0, 109, 119, 0.12);
+  background: var(--section-alt);
+}
+
+.video-highlight-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--section-alt);
+}
+
+.video-highlight-media video:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+.doc-video-stack {
+  display: grid;
+  gap: 1rem;
+}
+
 /* Service Category Cards */
 .service-category-card {
   background: var(--section-alt);
@@ -309,6 +385,9 @@
   }
   .doc-profile-card {
     padding: 3rem;
+  }
+  .video-highlight-card {
+    padding: 1.2rem;
   }
 }
 
@@ -372,6 +451,12 @@
 @media (max-width: 768px) {
   .page-hero {
     padding: 80px 0 50px;
+  }
+  .video-highlight-card {
+    padding: 1rem;
+  }
+  .video-highlight-card h4 {
+    font-size: 1.08rem;
   }
   .form-grid-2 {
     grid-template-columns: 1fr;
