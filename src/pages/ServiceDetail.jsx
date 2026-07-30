@@ -86,6 +86,25 @@ export default function ServiceDetail() {
   // Find if it is a category instead
   const category = serviceCategories.find((c) => c.id === slug);
 
+  const hideHeroBadge = [
+    "fertility-preconception-care",
+    "holistic-pregnancy-wellness",
+  ].includes(targetSlug);
+  const hideCategoryLabel = [
+    "womens-health-gynecology",
+    "pregnancy-maternal-care",
+    "diagnostics-testing",
+  ].includes(slug);
+  const hideIntegratesLine = [
+    "fertility-preconception-care",
+    "holistic-pregnancy-wellness",
+  ].includes(targetSlug);
+  const articleTitle =
+    targetSlug === "holistic-pregnancy-wellness" &&
+    service?.articleTitle?.startsWith("Title: ")
+      ? service.articleTitle.replace(/^Title:\s*/, "")
+      : service?.articleTitle;
+
   useEffect(() => {
     if (subServiceTitle) {
       document.title = `${subServiceTitle} | London Harley Street`;
@@ -298,7 +317,9 @@ export default function ServiceDetail() {
           }}
         >
           <div className="container">
-            <span className="uppercase">CLINICAL CATEGORY</span>
+            {!hideHeroBadge && !hideCategoryLabel && (
+              <span className="uppercase">CLINICAL CATEGORY</span>
+            )}
             <h1
               style={{
                 fontFamily: "var(--font-heading)",
@@ -583,7 +604,9 @@ export default function ServiceDetail() {
               justifyContent: isCenteredService ? "center" : "flex-start",
             }}
           >
-            <span className="uppercase">SPECIALIZED MEDICAL PROGRAM</span>
+            {!hideHeroBadge && (
+              <span className="uppercase">SPECIALIZED MEDICAL PROGRAM</span>
+            )}
             {subServiceTitle && (
               <div
                 style={{
@@ -612,19 +635,21 @@ export default function ServiceDetail() {
           >
             {service.title}
           </h1>
-          <p
-            style={{
-              fontSize: "1.1rem",
-              color: "var(--body-text)",
-              maxWidth: isCenteredService ? "900px" : "800px",
-              marginTop: "1rem",
-              lineHeight: "1.7",
-              marginLeft: isCenteredService ? "auto" : undefined,
-              marginRight: isCenteredService ? "auto" : undefined,
-            }}
-          >
-            <strong>Integrates:</strong> {service.combines}
-          </p>
+          {!hideIntegratesLine && (
+            <p
+              style={{
+                fontSize: "1.1rem",
+                color: "var(--body-text)",
+                maxWidth: isCenteredService ? "900px" : "800px",
+                marginTop: "1rem",
+                lineHeight: "1.7",
+                marginLeft: isCenteredService ? "auto" : undefined,
+                marginRight: isCenteredService ? "auto" : undefined,
+              }}
+            >
+              <strong>Integrates:</strong> {service.combines}
+            </p>
+          )}
         </div>
       </section>
 
@@ -660,7 +685,7 @@ export default function ServiceDetail() {
                       lineHeight: "1.4",
                     }}
                   >
-                    {service.articleTitle}
+                    {articleTitle}
                   </h2>
 
                   {service.paragraphs.map((p, idx) => (
@@ -676,31 +701,45 @@ export default function ServiceDetail() {
                     </p>
                   ))}
 
-                  {service.sections.map((section, idx) => (
-                    <div key={idx} style={{ marginTop: "3rem" }}>
-                      <h3
-                        style={{
-                          fontFamily: "var(--font-heading)",
-                          fontSize: "1.5rem",
-                          color: "var(--primary)",
-                          marginBottom: "1.25rem",
-                          borderLeft: "4px solid var(--secondary)",
-                          paddingLeft: "1rem",
-                        }}
-                      >
-                        {section.subHeading}
-                      </h3>
-                      <p
-                        style={{
-                          whiteSpace: "pre-line",
-                          fontSize: "1.05rem",
-                          marginBottom: "1.5rem",
-                        }}
-                      >
-                        {section.content}
-                      </p>
-                    </div>
-                  ))}
+                  {service.sections.map((section, idx) => {
+                    const hideSectionHeading =
+                      (targetSlug === "fertility-preconception-care" ||
+                        targetSlug === "holistic-pregnancy-wellness") &&
+                      [
+                        "Conclusion",
+                        "Call to Action",
+                        "Conclusion and Call to Action",
+                        "Call to Action (CTA)",
+                      ].includes(section.subHeading);
+
+                    return (
+                      <div key={idx} style={{ marginTop: "3rem" }}>
+                        {!hideSectionHeading && (
+                          <h3
+                            style={{
+                              fontFamily: "var(--font-heading)",
+                              fontSize: "1.5rem",
+                              color: "var(--primary)",
+                              marginBottom: "1.25rem",
+                              borderLeft: "4px solid var(--secondary)",
+                              paddingLeft: "1rem",
+                            }}
+                          >
+                            {section.subHeading}
+                          </h3>
+                        )}
+                        <p
+                          style={{
+                            whiteSpace: "pre-line",
+                            fontSize: "1.05rem",
+                            marginBottom: "1.5rem",
+                          }}
+                        >
+                          {section.content}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
