@@ -182,6 +182,7 @@ export default function Services() {
                   title={svc.title}
                   description={svc.paragraphs[0]}
                   to={`/services/${svc.slug}`}
+                  image={svc.image}
                 />
               </div>
             ))}

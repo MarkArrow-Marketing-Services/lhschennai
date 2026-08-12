@@ -2,11 +2,29 @@
 import { Link } from "react-router-dom";
 import { BookOpen, ArrowRight } from "lucide-react";
 
-export default function BlogCard({ slug, title, category, snippet }) {
+export default function BlogCard({
+  slug,
+  title,
+  category,
+  snippet,
+  image = null,
+}) {
   return (
     <div className="blog-card">
       <div className="blog-card-image">
-        <BookOpen size={48} strokeWidth={1} />
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        ) : (
+          <BookOpen size={48} strokeWidth={1} />
+        )}
       </div>
       <div className="blog-card-content">
         <span className="blog-card-meta">{category}</span>

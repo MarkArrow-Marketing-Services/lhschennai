@@ -1,5 +1,18 @@
 /* src/data/contentData.js */
 
+// Image imports
+import clinicalLabsImg from "../assets/images/clinical labs.avif";
+import dietConsultationImg from "../assets/images/diet consultation.avif";
+import ultrasoundImg from "../assets/images/female-patient-undergoing-ultrasound-procedure-medical-center_651396-2224.avif";
+import doctorConsultationImg from "../assets/images/happy-indian-female-doctor-shaking-hands-with-patient-consultation-hospital_1257902-8805.avif";
+import niptTestImg from "../assets/images/nipt testing images.avif";
+import bloodPressureImg from "../assets/images/nurse-taking-blood-pressure-patient-medical-examination-.avif";
+import pregnantWomanImg from "../assets/images/portrait-beautiful-pregnant-woman_23-2151426832.avif";
+import pregnantWindowImg from "../assets/images/pregnant-woman-standing-by-window-looking-photo_1157-46771.avif";
+import fetalMedicineImg from "../assets/images/pregnant-woman-using-stethoscope-examining-her-baby-her-belly_1205-2227.avif";
+import yogaWomenImg from "../assets/images/yoga-women.avif";
+import gynecologicalImg from "../assets/images/vaginal-smear-closeup-doctor-hand-holds-gynecological-examination-instruments-gynecologist-working-obstetrics-gynecology-clinic_657921-145.avif";
+
 export const homeContent = {
   metaTitle: "Trusted Gynecologist & Fertility Doctor in OMR Chennai for Women",
   metaDescription:
@@ -266,6 +279,7 @@ export const serviceCategories = [
   {
     id: "womens-health-gynecology",
     title: "Women’s Health & Gynecology",
+    image: doctorConsultationImg,
     items: [
       "Gynecology Related Problems",
       "Fertility Medical Services",
@@ -281,6 +295,7 @@ export const serviceCategories = [
   {
     id: "pregnancy-maternal-care",
     title: "Pregnancy & Maternal Care",
+    image: pregnantWomanImg,
     items: [
       "High-Risk Pregnancy Specialist",
       "Pregnancy Scans",
@@ -292,6 +307,7 @@ export const serviceCategories = [
   {
     id: "diagnostics-testing",
     title: "Diagnostic & Fetal Testing Services",
+    image: niptTestImg,
     items: [
       "Scan Centre",
       "NT Scan",
@@ -306,6 +322,7 @@ export const serviceCategories = [
   {
     id: "wellness-programs",
     title: "Wellness & Support Services",
+    image: yogaWomenImg,
     items: ["Yoga for Pregnancy", "Physiotherapy", "Dietician for Pregnancy"],
   },
 ];
@@ -314,6 +331,7 @@ export const detailedServices = [
   {
     slug: "holistic-pregnancy-wellness",
     title: "Holistic Pregnancy Wellness Programs",
+    image: yogaWomenImg,
     combines: "Yoga for Pregnancy + Physiotherapy + Dietician for Pregnancy",
     articleTitle:
       "Title: A Complete Wellness Guide for Women: Diet, Physiotherapy, and Pregnancy Yoga",
@@ -352,6 +370,7 @@ export const detailedServices = [
   {
     slug: "laboratory-clinical-testing",
     title: "Laboratory & Clinical Testing Services",
+    image: clinicalLabsImg,
     combines: "Labs and Blood Tests + Clinical Laboratory",
     articleTitle:
       "Your Trusted Pregnancy Scanning Centre Near Me in Chennai – Complete Guide to Pregnancy Screening Tests",
@@ -406,6 +425,7 @@ export const detailedServices = [
   {
     slug: "advanced-genetic-prenatal-testing",
     title: "Advanced Genetic & Prenatal Testing",
+    image: niptTestImg,
     combines: "NIPT Test + Amniocentesis & CVS Specialist",
     articleTitle:
       "Understanding Pregnancy Blood Test Levels & Weekly Diagnostic Tests – A Complete Guide for Expecting Mothers",
@@ -454,6 +474,7 @@ export const detailedServices = [
   {
     slug: "diagnostic-imaging-scan-services",
     title: "Diagnostic Imaging & Scan Services",
+    image: ultrasoundImg,
     combines: "Scan Centre + NT Scan + TIFFA Scan / Anomaly Scan",
     articleTitle:
       "A Complete Guide to Ultrasound During Pregnancy: Safe, Essential & Reassuring Care for Every Mother",
@@ -512,6 +533,7 @@ export const detailedServices = [
   {
     slug: "fetal-medicine-in-utero-interventions",
     title: "Fetal Medicine & In-Utero Interventions",
+    image: fetalMedicineImg,
     combines:
       "Combines Fetal Medicine Interventions with broader fetal care context",
     articleTitle:
@@ -563,6 +585,7 @@ export const detailedServices = [
   {
     slug: "pregnancy-scans-advanced-ultrasound",
     title: "Pregnancy Scans & Advanced Ultrasound Services",
+    image: ultrasoundImg,
     combines:
       "Combines Pregnancy Scans + Advanced Ultrasound & Fetal Medical Services",
     articleTitle:
@@ -618,6 +641,7 @@ export const detailedServices = [
   {
     slug: "high-risk-pregnancy-fetal-medicine",
     title: "High-Risk Pregnancy & Fetal Medicine Specialist",
+    image: pregnantWindowImg,
     combines:
       "Combines High-Risk Pregnancy Specialist + Fetal Medicine Specialist",
     articleTitle:
@@ -674,6 +698,7 @@ export const detailedServices = [
   {
     slug: "premarital-sexual-health-counselling",
     title: "Premarital & Sexual Health Counselling",
+    image: doctorConsultationImg,
     combines: "Premarital Counselling + Sexual Counselling / Sexologist",
     articleTitle:
       "Female Reproductive Specialists in Chennai: A Complete Guide to Premarital Counseling and Fertility Treatments",
@@ -733,6 +758,7 @@ export const detailedServices = [
   {
     slug: "hysteroscopy-advanced-uterine-care",
     title: "Hysteroscopy & Advanced Uterine Care",
+    image: gynecologicalImg,
     combines: "Hysteroscopy Specialist + Gynecology Related Problems",
     articleTitle:
       "Finding the Right Female Gynecologist in Chennai: Expert Women’s Healthcare & Hysteroscopy Surgery in OMR Road",
@@ -793,6 +819,7 @@ export const detailedServices = [
   {
     slug: "fertility-preconception-care",
     title: "Fertility & Preconception Care",
+    image: doctorConsultationImg,
     combines: "Fertility Medical Services + Preconception Counseling",
     articleTitle:
       "Advanced Fertility Medical Services in Chennai: Expert Care for Your Parenthood Journey",
@@ -872,6 +899,7 @@ export const detailedServices = [
   {
     slug: "gynecology-minimally-invasive-surgery",
     title: "Gynecology & Minimally Invasive Surgery",
+    image: gynecologicalImg,
     combines: "Gynecology Related Problems + Laparoscopy Specialist",
     articleTitle:
       "Expert Women’s Healthcare in Chennai: Advanced Gynecology & Pregnancy Care for Every Stage of Life",

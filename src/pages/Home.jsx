@@ -24,7 +24,7 @@ import DoctorCard from "../components/common/DoctorCard";
 import ServiceCard from "../components/common/ServiceCard";
 import BlogCard from "../components/common/BlogCard";
 import CTASection from "../components/common/CTASection";
-import heroImg from "../assets/images/hero_fertility.png";
+import heroImg from "../assets/images/A_realistic_Indian_modern_fertility_202605192035.jpeg";
 import "../styles/Home.css";
 
 export default function Home() {
@@ -323,6 +323,7 @@ export default function Home() {
                   title={svc.title}
                   description={svc.paragraphs?.[0] ?? ""}
                   to={`/services/${svc.slug}`}
+                  image={svc.image}
                 />
               </div>
             ))}
@@ -547,6 +548,7 @@ export default function Home() {
                   title={post.articleTitle.replace("Title: ", "")}
                   category={post.title}
                   snippet={post.paragraphs[0].substring(0, 120) + "..."}
+                  image={post.image}
                 />
               </div>
             ))}
