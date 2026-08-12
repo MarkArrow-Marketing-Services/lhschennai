@@ -992,6 +992,7 @@ export const locationData = [
       "Specializing in gynecology, obstetrics, reproductive medicine, advanced IVF, and fetal scanning.",
     details:
       "Established in Perungudi in 2016, the centre has quickly gained recognition for its best in class while maintaining the medical standards and patient-focused approach.",
+    mapUrl: "https://maps.app.goo.gl/RVPwkc9aQ9MApLZQ9?g_st=aw",
   },
   {
     name: "Thalambur Branch",
@@ -1000,5 +1001,6 @@ export const locationData = [
       "Gynecology consultations, obstetrics scans, pregnancy screening, and support services.",
     details:
       "Started at Thalambur in 2025, to provide the quality care more accessible to families surrounding that region.",
+    mapUrl: "https://maps.app.goo.gl/UDSk3iWxwpXvizso8",
   },
 ];

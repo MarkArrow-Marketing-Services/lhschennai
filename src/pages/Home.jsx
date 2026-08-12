@@ -479,15 +479,33 @@ export default function Home() {
                       fontSize: "1rem",
                       color: "var(--dark-text)",
                       fontWeight: "500",
-                      marginBottom: "1rem",
+                      marginBottom: "0.5rem",
                     }}
                   >
                     {loc.address}
                   </p>
+                  <a
+                    href={loc.mapUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="location-map-link"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.5rem",
+                      color: "#1a73e8",
+                      textDecoration: "none",
+                      marginBottom: "1rem",
+                      fontSize: "0.95rem",
+                    }}
+                  >
+                    <MapPin size={16} />
+                    <span>Find this branch on Google Maps</span>
+                  </a>
                   <p
                     style={{
                       fontSize: "0.95rem",
-                      color: "--body-text",
+                      color: "var(--body-text)",
                       marginBottom: "1.5rem",
                       lineHeight: "1.7",
                     }}

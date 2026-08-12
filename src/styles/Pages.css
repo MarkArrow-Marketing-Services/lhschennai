@@ -448,6 +448,14 @@
   border-color: var(--secondary);
 }
 
+.location-map-link {
+  font-weight: 600;
+}
+
+.location-map-link:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .page-hero {
     padding: 80px 0 50px;

@@ -11,12 +11,13 @@ export default function Contact() {
     email: "",
     phone: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    document.title = "Contact Us | London Harley Street Women & Fertility Centre";
+    document.title =
+      "Contact Us | London Harley Street Women & Fertility Centre";
   }, []);
 
   const handleChange = (e) => {
@@ -34,10 +35,12 @@ export default function Contact() {
         email: "",
         phone: "",
         subject: "",
-        message: ""
+        message: "",
       });
       setSubmitted(false);
-      alert("Thank you! Your inquiry has been received. Our team will contact you shortly.");
+      alert(
+        "Thank you! Your inquiry has been received. Our team will contact you shortly.",
+      );
     }, 1000);
   };
 
@@ -49,7 +52,9 @@ export default function Contact() {
           <span className="subtitle">Get In Touch</span>
           <h1>Contact Our Centre</h1>
           <p>
-            If you are looking for an experienced gynecologist, or exploring fertility options, London Harley Street Centre is here to support you at every step.
+            If you are looking for an experienced gynecologist, or exploring
+            fertility options, London Harley Street Centre is here to support
+            you at every step.
           </p>
         </div>
       </section>
@@ -62,8 +67,11 @@ export default function Contact() {
             <div className="col-7">
               <div className="form-container">
                 <h3 className="form-title">Send Us a Message</h3>
-                
-                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column" }}>
+
+                <form
+                  onSubmit={handleSubmit}
+                  style={{ display: "flex", flexDirection: "column" }}
+                >
                   <div className="form-grid-2">
                     <div className="form-group">
                       <label htmlFor="name">Your Name *</label>
@@ -77,7 +85,7 @@ export default function Contact() {
                         className="form-control"
                       />
                     </div>
-                    
+
                     <div className="form-group">
                       <label htmlFor="phone">Phone Number *</label>
                       <input
@@ -132,7 +140,15 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
-                  <Button type="submit" variant="primary" style={{ alignSelf: "flex-start", marginTop: "1rem", gap: "0.5rem" }}>
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    style={{
+                      alignSelf: "flex-start",
+                      marginTop: "1rem",
+                      gap: "0.5rem",
+                    }}
+                  >
                     <Send size={16} />
                     <span>{submitted ? "Sending..." : "Submit Inquiry"}</span>
                   </Button>
@@ -142,40 +158,93 @@ export default function Contact() {
 
             {/* Right Column - Info Panels */}
             <div className="col-5">
-              <div style={{ display: "flex", gap: "2.5rem", flexDirection: "column" }}>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "2.5rem",
+                  flexDirection: "column",
+                }}
+              >
                 {/* Branch Info blocks */}
                 {locationData.map((loc, idx) => (
-                  <div key={idx} style={{
-                    background: "var(--white)",
-                    padding: "2.5rem",
-                    borderRadius: "var(--radius-lg)",
-                    border: "1px solid var(--border-light)",
-                    boxShadow: "var(--shadow-sm)"
-                  }}>
-                    <h3 style={{ fontSize: "1.35rem", color: "var(--primary)", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <div
+                    key={idx}
+                    style={{
+                      background: "var(--white)",
+                      padding: "2.5rem",
+                      borderRadius: "var(--radius-lg)",
+                      border: "1px solid var(--border-light)",
+                      boxShadow: "var(--shadow-sm)",
+                    }}
+                  >
+                    <h3
+                      style={{
+                        fontSize: "1.35rem",
+                        color: "var(--primary)",
+                        marginBottom: "1rem",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                      }}
+                    >
                       <MapPin size={20} />
                       <span>{loc.name}</span>
                     </h3>
-                    <p style={{ fontSize: "0.95rem", color: "var(--dark-text)", fontWeight: "500", marginBottom: "0.5rem" }}>
+                    <p
+                      style={{
+                        fontSize: "0.95rem",
+                        color: "var(--dark-text)",
+                        fontWeight: "500",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
                       {loc.address}
                     </p>
-                    <p style={{ fontSize: "0.85rem", color: "var(--body-text)", margin: 0 }}>
+                    <a
+                      href={loc.mapUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="location-map-link"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                        color: "#1a73e8",
+                        textDecoration: "none",
+                        marginBottom: "1rem",
+                        fontSize: "0.9rem",
+                      }}
+                    >
+                      <MapPin size={14} />
+                      <span>View branch on Google Maps</span>
+                    </a>
+                    <p
+                      style={{
+                        fontSize: "0.85rem",
+                        color: "var(--body-text)",
+                        margin: 0,
+                      }}
+                    >
                       <strong>Services:</strong> {loc.services}
                     </p>
                   </div>
                 ))}
-                
+
                 {/* Global Contact metrics */}
                 <div className="sidebar-card" style={{ position: "static" }}>
                   <h3 className="sidebar-title">Hours & Communications</h3>
                   <div className="flex flex-col gap-3">
                     <div className="flex align-center gap-2">
                       <Clock size={16} color="var(--secondary)" />
-                      <span style={{ fontSize: "0.9rem" }}>Mon - Sat: 9:00 AM - 7:00 PM (Sunday Closed)</span>
+                      <span style={{ fontSize: "0.9rem" }}>
+                        Mon - Sat: 9:00 AM - 7:00 PM (Sunday Closed)
+                      </span>
                     </div>
                     <div className="flex align-center gap-2">
                       <Mail size={16} color="var(--secondary)" />
-                      <span style={{ fontSize: "0.9rem" }}>info@londonharleyfertility.com</span>
+                      <span style={{ fontSize: "0.9rem" }}>
+                        info@londonharleyfertility.com
+                      </span>
                     </div>
                   </div>
                 </div>
