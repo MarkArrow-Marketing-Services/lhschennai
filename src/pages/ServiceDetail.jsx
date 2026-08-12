@@ -1,6 +1,7 @@
 /* src/pages/ServiceDetail.jsx */
 import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   ChevronRight,
   ArrowLeft,
@@ -74,6 +75,60 @@ const subServiceTitles = {
   "dietician-for-pregnancy": "Dietician for Pregnancy",
 };
 
+// Meta tags for each service page
+const serviceMetaTags = {
+  "holistic-pregnancy-wellness": {
+    title: "Pregnancy Wellness Programs in Chennai | Yoga & Physiotherapy",
+    description:
+      "Discover holistic pregnancy wellness programs in Chennai with prenatal yoga, pregnancy physiotherapy, nutrition guidance and personalized care for women",
+  },
+  "diagnostic-imaging-scan-services": {
+    title: "Ultrasound During Pregnancy in Chennai | Pregnancy Scans",
+    description:
+      "Early pregnancy ultrasound in Chennai to assess pregnancy location, viability and gestational development with expert medical guidance",
+  },
+  "advanced-genetic-prenatal-testing": {
+    title: "Pregnancy Blood Tests & Prenatal Testing in Chennai",
+    description:
+      "Learn about pregnancy blood tests by week, hCG levels, prenatal screening, NIPT, and diagnostic testing. Get comprehensive prenatal care in Chennai",
+  },
+  "laboratory-clinical-testing": {
+    title: "Pregnancy Scan & Screening Centre in Chennai",
+    description:
+      "Find pregnancy scanning and screening services in Chennai, including early pregnancy scans, NT scans, anomaly scans, growth scans and pregnancy blood tests",
+  },
+  "high-risk-pregnancy-fetal-medicine": {
+    title: "High Risk Pregnancy Specialist in Chennai | Fetal Medicine",
+    description:
+      "Looking for a high-risk pregnancy specialist in Chennai? Get expert maternal-fetal medicine, fetal monitoring and personalized care for complicated pregnancies",
+  },
+  "pregnancy-scans-advanced-ultrasound": {
+    title: "Pregnancy Scans & Anomaly Scan in Chennai | Expert Care",
+    description:
+      "Searching for pregnancy scans in Chennai? Get anomaly, growth and advanced ultrasound scans with expert care at London Harley Street Women Fertility Clinic",
+  },
+  "fetal-medicine-in-utero-interventions": {
+    title: "Maternal Fetal Medicine in Chennai | Expert Fetal Care",
+    description:
+      "Explore expert maternal fetal medicine in Chennai, including fetal development monitoring, high-risk pregnancy care, fetal scans, NIPT and prenatal diagnosis.",
+  },
+  "fertility-preconception-care": {
+    title: "Fertility Clinic in Chennai | Advanced Fertility Medical Services",
+    description:
+      "Explore advanced fertility medical services in Chennai, including fertility assessment, IVF, IUI, ICSI and personalized care from experienced fertility specialists",
+  },
+  "premarital-sexual-health-counselling": {
+    title: "Female Reproductive Specialist in Chennai | Fertility Care",
+    description:
+      "Consult a female reproductive specialist in Chennai for premarital counselling, fertility treatment, sexual health guidance, IVF, IUI and personalized reproductive care",
+  },
+  "gynecology-minimally-invasive-surgery": {
+    title: "Experienced Gynaecologist in OMR | Hysteroscopy Surgery Chennai",
+    description:
+      "Find an experienced Gynecologist in OMR Road for fertility, pregnancy and women's health care. Explore expert Hysteroscopy Surgery in Chennai",
+  },
+};
+
 export default function ServiceDetail() {
   const { slug } = useParams();
 
@@ -120,304 +175,369 @@ export default function ServiceDetail() {
   // Special handle for family planning (or mapping keys that target it)
   if (targetSlug === "family-planning-sterilisation") {
     return (
-      <div className="service-detail-page" style={{ marginTop: "80px" }}>
-        {/* Hero Area */}
-        <section
-          style={{
-            padding: "5rem 0",
-            background:
-              "linear-gradient(135deg, var(--section-alt) 0%, #FFFFFF 100%)",
-            borderBottom: "1px solid var(--border-light)",
-          }}
-        >
-          <div className="container">
-            <Link
-              to="/services"
-              className="flex align-center gap-1"
-              style={{
-                marginBottom: "1.5rem",
-                display: "inline-flex",
-                fontWeight: "500",
-              }}
-            >
-              <ArrowLeft size={16} /> Back to Services
-            </Link>
-            <span className="uppercase">Women's Health Speciality</span>
-            {subServiceTitle && (
-              <div
+      <>
+        <Helmet>
+          <title>
+            Family Planning & Sterilisation Services | London Harley Street
+          </title>
+          <meta
+            name="description"
+            content="Expert family planning and sterilisation services in Chennai. Get personalized counseling and safe medical procedures from experienced gynecologists."
+          />
+        </Helmet>
+        <div className="service-detail-page" style={{ marginTop: "80px" }}>
+          {/* Hero Area */}
+          <section
+            style={{
+              padding: "5rem 0",
+              background:
+                "linear-gradient(135deg, var(--section-alt) 0%, #FFFFFF 100%)",
+              borderBottom: "1px solid var(--border-light)",
+            }}
+          >
+            <div className="container">
+              <Link
+                to="/services"
+                className="flex align-center gap-1"
                 style={{
-                  background: "var(--accent)",
-                  color: "var(--primary)",
-                  padding: "0.25rem 1rem",
-                  borderRadius: "var(--radius-full)",
+                  marginBottom: "1.5rem",
                   display: "inline-flex",
-                  fontSize: "0.85rem",
-                  fontWeight: "600",
-                  marginLeft: "1rem",
+                  fontWeight: "500",
                 }}
               >
-                {subServiceTitle}
-              </div>
-            )}
-            <h1
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "var(--h1-fs)",
-                marginTop: "1rem",
-              }}
-            >
-              Family Planning & Sterilisation Services
-            </h1>
-            <p
-              style={{
-                fontSize: "1.1rem",
-                color: "var(--body-text)",
-                maxWidth: "700px",
-                marginTop: "1rem",
-              }}
-            >
-              Combines Family Planning Doctor + Sterilisation Doctor
-            </p>
-          </div>
-        </section>
+                <ArrowLeft size={16} /> Back to Services
+              </Link>
+              <span className="uppercase">Women's Health Speciality</span>
+              {subServiceTitle && (
+                <div
+                  style={{
+                    background: "var(--accent)",
+                    color: "var(--primary)",
+                    padding: "0.25rem 1rem",
+                    borderRadius: "var(--radius-full)",
+                    display: "inline-flex",
+                    fontSize: "0.85rem",
+                    fontWeight: "600",
+                    marginLeft: "1rem",
+                  }}
+                >
+                  {subServiceTitle}
+                </div>
+              )}
+              <h1
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontSize: "var(--h1-fs)",
+                  marginTop: "1rem",
+                }}
+              >
+                Family Planning & Sterilisation Services
+              </h1>
+              <p
+                style={{
+                  fontSize: "1.1rem",
+                  color: "var(--body-text)",
+                  maxWidth: "700px",
+                  marginTop: "1rem",
+                }}
+              >
+                Combines Family Planning Doctor + Sterilisation Doctor
+              </p>
+            </div>
+          </section>
 
-        <section className="section" style={{ background: "var(--white)" }}>
-          <div className="container">
-            <div className="grid-12">
-              <div className="col-8">
-                <div style={{ paddingRight: "2rem" }}>
-                  <p
-                    style={{
-                      fontSize: "1.1rem",
-                      lineHeight: "1.8",
-                      color: "var(--dark-text)",
-                      marginBottom: "1.5rem",
-                    }}
-                  >
-                    At London Harley Street Women & Fertility Centre, we offer
-                    private, compassionate, and expert consultation for couples
-                    and individuals looking for family planning advice and
-                    medical sterilisation options.
-                  </p>
-                  <p
-                    style={{
-                      fontSize: "1rem",
-                      lineHeight: "1.8",
-                      color: "var(--body-text)",
-                      marginBottom: "2rem",
-                    }}
-                  >
-                    Choosing the right contraceptive method or exploring
-                    permanent sterilisation procedures is an important decision.
-                    Our specialists discuss medical history, lifestyle
-                    preferences, and reproductive health states to provide
-                    tailored guidelines.
-                  </p>
+          <section className="section" style={{ background: "var(--white)" }}>
+            <div className="container">
+              <div className="grid-12">
+                <div className="col-8">
+                  <div style={{ paddingRight: "2rem" }}>
+                    <p
+                      style={{
+                        fontSize: "1.1rem",
+                        lineHeight: "1.8",
+                        color: "var(--dark-text)",
+                        marginBottom: "1.5rem",
+                      }}
+                    >
+                      At London Harley Street Women & Fertility Centre, we offer
+                      private, compassionate, and expert consultation for
+                      couples and individuals looking for family planning advice
+                      and medical sterilisation options.
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "1rem",
+                        lineHeight: "1.8",
+                        color: "var(--body-text)",
+                        marginBottom: "2rem",
+                      }}
+                    >
+                      Choosing the right contraceptive method or exploring
+                      permanent sterilisation procedures is an important
+                      decision. Our specialists discuss medical history,
+                      lifestyle preferences, and reproductive health states to
+                      provide tailored guidelines.
+                    </p>
 
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "1.5rem",
-                      color: "var(--primary)",
-                      marginBottom: "1.5rem",
-                    }}
-                  >
-                    Associated Clinical Focus
-                  </h3>
-                  <div className="flex flex-col gap-3">
-                    <div className="flex align-center gap-2">
-                      <CheckCircle2 size={18} color="var(--primary)" />
-                      <span>
-                        Complete birth control counseling & prescription plans
-                      </span>
-                    </div>
-                    <div className="flex align-center gap-2">
-                      <CheckCircle2 size={18} color="var(--primary)" />
-                      <span>
-                        Temporary barrier & hormonal contraception options
-                      </span>
-                    </div>
-                    <div className="flex align-center gap-2">
-                      <CheckCircle2 size={18} color="var(--primary)" />
-                      <span>
-                        Laparoscopic permanent sterilisation consultations
-                      </span>
-                    </div>
-                    <div className="flex align-center gap-2">
-                      <CheckCircle2 size={18} color="var(--primary)" />
-                      <span>
-                        Post-sterilization counseling & recovery tracking
-                      </span>
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-heading)",
+                        fontSize: "1.5rem",
+                        color: "var(--primary)",
+                        marginBottom: "1.5rem",
+                      }}
+                    >
+                      Associated Clinical Focus
+                    </h3>
+                    <div className="flex flex-col gap-3">
+                      <div className="flex align-center gap-2">
+                        <CheckCircle2 size={18} color="var(--primary)" />
+                        <span>
+                          Complete birth control counseling & prescription plans
+                        </span>
+                      </div>
+                      <div className="flex align-center gap-2">
+                        <CheckCircle2 size={18} color="var(--primary)" />
+                        <span>
+                          Temporary barrier & hormonal contraception options
+                        </span>
+                      </div>
+                      <div className="flex align-center gap-2">
+                        <CheckCircle2 size={18} color="var(--primary)" />
+                        <span>
+                          Laparoscopic permanent sterilisation consultations
+                        </span>
+                      </div>
+                      <div className="flex align-center gap-2">
+                        <CheckCircle2 size={18} color="var(--primary)" />
+                        <span>
+                          Post-sterilization counseling & recovery tracking
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="col-4">
-                <div
-                  style={{
-                    background: "var(--section-alt)",
-                    padding: "2.5rem",
-                    borderRadius: "var(--radius-lg)",
-                    border: "1px solid var(--border-light)",
-                    position: "sticky",
-                    top: "100px",
-                  }}
-                >
-                  <h3
+                <div className="col-4">
+                  <div
                     style={{
-                      fontSize: "1.2rem",
-                      color: "var(--primary)",
-                      marginBottom: "1.5rem",
+                      background: "var(--section-alt)",
+                      padding: "2.5rem",
+                      borderRadius: "var(--radius-lg)",
+                      border: "1px solid var(--border-light)",
+                      position: "sticky",
+                      top: "100px",
                     }}
                   >
-                    Request Consultation
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: "0.9rem",
-                      color: "var(--body-text)",
-                      marginBottom: "2rem",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    Consult our gynecologists and family planning specialists at
-                    Perungudi and Thalambur branches.
-                  </p>
-                  <Button
-                    to="/book-appointment"
-                    variant="primary"
-                    style={{ width: "100%" }}
-                  >
-                    Book Appointment
-                  </Button>
+                    <h3
+                      style={{
+                        fontSize: "1.2rem",
+                        color: "var(--primary)",
+                        marginBottom: "1.5rem",
+                      }}
+                    >
+                      Request Consultation
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: "0.9rem",
+                        color: "var(--body-text)",
+                        marginBottom: "2rem",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      Consult our gynecologists and family planning specialists
+                      at Perungudi and Thalambur branches.
+                    </p>
+                    <Button
+                      to="/book-appointment"
+                      variant="primary"
+                      style={{ width: "100%" }}
+                    >
+                      Book Appointment
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <CTASection />
-      </div>
+          <CTASection />
+        </div>
+      </>
     );
   }
 
   // Handle Category list view
   if (category) {
     return (
-      <div className="service-detail-page" style={{ marginTop: "80px" }}>
-        {/* Hero Area */}
-        <section
-          style={{
-            padding: "5rem 0",
-            background:
-              "linear-gradient(135deg, var(--section-alt) 0%, #FFFFFF 100%)",
-            borderBottom: "1px solid var(--border-light)",
-            textAlign: "center",
-          }}
-        >
-          <div className="container">
-            {!hideHeroBadge && !hideCategoryLabel && (
-              <span className="uppercase">CLINICAL CATEGORY</span>
-            )}
-            <h1
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "var(--h1-fs)",
-                marginTop: "1rem",
-              }}
-            >
-              {category.title}
-            </h1>
-          </div>
-        </section>
+      <>
+        <Helmet>
+          <title>
+            {category.title} | London Harley Street Women & Fertility Centre
+          </title>
+          <meta
+            name="description"
+            content={
+              category.description ||
+              "Comprehensive fertility and women's health services at London Harley Street Women & Fertility Centre in Chennai"
+            }
+          />
+        </Helmet>
+        <div className="service-detail-page" style={{ marginTop: "80px" }}>
+          {/* Hero Area */}
+          <section
+            style={{
+              padding: "5rem 0",
+              background:
+                "linear-gradient(135deg, var(--section-alt) 0%, #FFFFFF 100%)",
+              borderBottom: "1px solid var(--border-light)",
+              textAlign: "center",
+            }}
+          >
+            <div className="container">
+              {!hideHeroBadge && !hideCategoryLabel && (
+                <span className="uppercase">CLINICAL CATEGORY</span>
+              )}
+              <h1
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontSize: "var(--h1-fs)",
+                  marginTop: "1rem",
+                }}
+              >
+                {category.title}
+              </h1>
+            </div>
+          </section>
 
-        <section className="section" style={{ background: "var(--white)" }}>
-          <div className="container">
-            <div className="grid-12">
-              <div className="col-8">
-                <h3
-                  style={{
-                    fontSize: "1.35rem",
-                    color: "var(--primary)",
-                    marginBottom: "1.5rem",
-                  }}
-                >
-                  Clinical Bulletins:
-                </h3>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: "1rem",
-                    marginBottom: "3rem",
-                  }}
-                >
-                  {category.items.map((item, idx) => (
-                    <div
-                      key={idx}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                        fontSize: "1rem",
-                        color: "var(--dark-text)",
-                      }}
-                    >
-                      <HeartPulse size={16} color="var(--primary)" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <h3
-                  style={{
-                    fontSize: "1.35rem",
-                    color: "var(--primary)",
-                    marginBottom: "1.5rem",
-                  }}
-                >
-                  Detailed Clinical Programs:
-                </h3>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "1.5rem",
-                  }}
-                >
-                  {detailedServices
-                    .filter((s) => {
-                      if (category.id === "womens-health-gynecology") {
-                        return [
-                          "gynecology-minimally-invasive-surgery",
-                          "fertility-preconception-care",
-                          "premarital-sexual-health-counselling",
-                          "hysteroscopy-advanced-uterine-care",
-                        ].includes(s.slug);
-                      }
-                      if (category.id === "pregnancy-maternal-care") {
-                        return [
-                          "high-risk-pregnancy-fetal-medicine",
-                          "pregnancy-scans-advanced-ultrasound",
-                          "fetal-medicine-in-utero-interventions",
-                        ].includes(s.slug);
-                      }
-                      if (category.id === "diagnostics-testing") {
-                        return [
-                          "diagnostic-imaging-scan-services",
-                          "advanced-genetic-prenatal-testing",
-                          "laboratory-clinical-testing",
-                        ].includes(s.slug);
-                      }
-                      if (category.id === "wellness-programs") {
-                        return ["holistic-pregnancy-wellness"].includes(s.slug);
-                      }
-                      return false;
-                    })
-                    .map((s) => (
+          <section className="section" style={{ background: "var(--white)" }}>
+            <div className="container">
+              <div className="grid-12">
+                <div className="col-8">
+                  <h3
+                    style={{
+                      fontSize: "1.35rem",
+                      color: "var(--primary)",
+                      marginBottom: "1.5rem",
+                    }}
+                  >
+                    Clinical Bulletins:
+                  </h3>
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "1fr 1fr",
+                      gap: "1rem",
+                      marginBottom: "3rem",
+                    }}
+                  >
+                    {category.items.map((item, idx) => (
                       <div
-                        key={s.slug}
+                        key={idx}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "0.5rem",
+                          fontSize: "1rem",
+                          color: "var(--dark-text)",
+                        }}
+                      >
+                        <HeartPulse size={16} color="var(--primary)" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: "1.35rem",
+                      color: "var(--primary)",
+                      marginBottom: "1.5rem",
+                    }}
+                  >
+                    Detailed Clinical Programs:
+                  </h3>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "1.5rem",
+                    }}
+                  >
+                    {detailedServices
+                      .filter((s) => {
+                        if (category.id === "womens-health-gynecology") {
+                          return [
+                            "gynecology-minimally-invasive-surgery",
+                            "fertility-preconception-care",
+                            "premarital-sexual-health-counselling",
+                            "hysteroscopy-advanced-uterine-care",
+                          ].includes(s.slug);
+                        }
+                        if (category.id === "pregnancy-maternal-care") {
+                          return [
+                            "high-risk-pregnancy-fetal-medicine",
+                            "pregnancy-scans-advanced-ultrasound",
+                            "fetal-medicine-in-utero-interventions",
+                          ].includes(s.slug);
+                        }
+                        if (category.id === "diagnostics-testing") {
+                          return [
+                            "diagnostic-imaging-scan-services",
+                            "advanced-genetic-prenatal-testing",
+                            "laboratory-clinical-testing",
+                          ].includes(s.slug);
+                        }
+                        if (category.id === "wellness-programs") {
+                          return ["holistic-pregnancy-wellness"].includes(
+                            s.slug,
+                          );
+                        }
+                        return false;
+                      })
+                      .map((s) => (
+                        <div
+                          key={s.slug}
+                          style={{
+                            padding: "2.5rem",
+                            background: "var(--section-alt)",
+                            borderRadius: "var(--radius-lg)",
+                            border: "1px solid var(--border-light)",
+                          }}
+                        >
+                          <h4
+                            style={{
+                              fontFamily: "var(--font-heading)",
+                              fontSize: "1.35rem",
+                              color: "var(--dark-text)",
+                              marginBottom: "0.5rem",
+                            }}
+                          >
+                            {s.title}
+                          </h4>
+                          <p
+                            style={{
+                              fontSize: "0.95rem",
+                              color: "var(--body-text)",
+                              marginBottom: "1.5rem",
+                            }}
+                          >
+                            {s.paragraphs[0]}
+                          </p>
+                          <Link
+                            key={s.slug}
+                            to={`/services/${s.slug}`}
+                            className="service-card-link"
+                          >
+                            <span>Read Verbatim Medical Guide</span>
+                            <ChevronRight size={14} />
+                          </Link>
+                        </div>
+                      ))}
+
+                    {category.id === "womens-health-gynecology" && (
+                      <div
                         style={{
                           padding: "2.5rem",
                           background: "var(--section-alt)",
@@ -433,7 +553,7 @@ export default function ServiceDetail() {
                             marginBottom: "0.5rem",
                           }}
                         >
-                          {s.title}
+                          Family Planning & Sterilisation Services
                         </h4>
                         <p
                           style={{
@@ -442,105 +562,67 @@ export default function ServiceDetail() {
                             marginBottom: "1.5rem",
                           }}
                         >
-                          {s.paragraphs[0]}
+                          Family planning guidance and medical sterilization
+                          procedures tailored to patient goals.
                         </p>
                         <Link
-                          key={s.slug}
-                          to={`/services/${s.slug}`}
+                          to="/services/family-planning-sterilisation"
                           className="service-card-link"
                         >
                           <span>Read Verbatim Medical Guide</span>
                           <ChevronRight size={14} />
                         </Link>
                       </div>
-                    ))}
+                    )}
+                  </div>
+                </div>
 
-                  {category.id === "womens-health-gynecology" && (
-                    <div
+                <div className="col-4">
+                  <div
+                    style={{
+                      background: "var(--section-alt)",
+                      padding: "2.5rem",
+                      borderRadius: "var(--radius-lg)",
+                      border: "1px solid var(--border-light)",
+                      position: "sticky",
+                      top: "100px",
+                    }}
+                  >
+                    <h3
                       style={{
-                        padding: "2.5rem",
-                        background: "var(--section-alt)",
-                        borderRadius: "var(--radius-lg)",
-                        border: "1px solid var(--border-light)",
+                        fontSize: "1.2rem",
+                        color: "var(--primary)",
+                        marginBottom: "1.5rem",
                       }}
                     >
-                      <h4
-                        style={{
-                          fontFamily: "var(--font-heading)",
-                          fontSize: "1.35rem",
-                          color: "var(--dark-text)",
-                          marginBottom: "0.5rem",
-                        }}
-                      >
-                        Family Planning & Sterilisation Services
-                      </h4>
-                      <p
-                        style={{
-                          fontSize: "0.95rem",
-                          color: "var(--body-text)",
-                          marginBottom: "1.5rem",
-                        }}
-                      >
-                        Family planning guidance and medical sterilization
-                        procedures tailored to patient goals.
-                      </p>
-                      <Link
-                        to="/services/family-planning-sterilisation"
-                        className="service-card-link"
-                      >
-                        <span>Read Verbatim Medical Guide</span>
-                        <ChevronRight size={14} />
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <div className="col-4">
-                <div
-                  style={{
-                    background: "var(--section-alt)",
-                    padding: "2.5rem",
-                    borderRadius: "var(--radius-lg)",
-                    border: "1px solid var(--border-light)",
-                    position: "sticky",
-                    top: "100px",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: "1.2rem",
-                      color: "var(--primary)",
-                      marginBottom: "1.5rem",
-                    }}
-                  >
-                    Expert Consultation
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: "0.95rem",
-                      color: "var(--body-text)",
-                      marginBottom: "1.5rem",
-                    }}
-                  >
-                    Book appointment today to consult with our medical
-                    professionals about {category.title} services.
-                  </p>
-                  <Button
-                    to="/book-appointment"
-                    variant="primary"
-                    style={{ width: "100%" }}
-                  >
-                    Book Appointment
-                  </Button>
+                      Expert Consultation
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: "0.95rem",
+                        color: "var(--body-text)",
+                        marginBottom: "1.5rem",
+                      }}
+                    >
+                      Book appointment today to consult with our medical
+                      professionals about {category.title} services.
+                    </p>
+                    <Button
+                      to="/book-appointment"
+                      variant="primary"
+                      style={{ width: "100%" }}
+                    >
+                      Book Appointment
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <CTASection />
-      </div>
+          <CTASection />
+        </div>
+      </>
     );
   }
 
@@ -566,276 +648,291 @@ export default function ServiceDetail() {
   const isCenteredService = centeredServices.includes(targetSlug);
 
   // Handle Detailed Combo Service/Article View
-  return (
-    <div className="service-detail-page" style={{ marginTop: "80px" }}>
-      {/* Hero Header area */}
-      <section
-        style={{
-          padding: "5rem 0",
-          background:
-            "linear-gradient(135deg, var(--section-alt) 0%, #FFFFFF 100%)",
-          borderBottom: "1px solid var(--border-light)",
-        }}
-      >
-        <div
-          className="container"
-          style={{ textAlign: isCenteredService ? "center" : "left" }}
-        >
-          {!isCenteredService && (
-            <Link
-              to="/services"
-              className="flex align-center gap-1"
-              style={{
-                marginBottom: "1.5rem",
-                display: "inline-flex",
-                fontWeight: "500",
-              }}
-            >
-              <ArrowLeft size={16} /> Back to Services
-            </Link>
-          )}
+  const metaTags = serviceMetaTags[targetSlug] || {
+    title:
+      service?.title + " | London Harley Street Women & Fertility Centre" ||
+      "Service | London Harley Street",
+    description:
+      service?.paragraphs?.[0]?.substring(0, 160) ||
+      "Expert fertility and women's health services in Chennai",
+  };
 
+  return (
+    <>
+      <Helmet>
+        <title>{metaTags.title}</title>
+        <meta name="description" content={metaTags.description} />
+      </Helmet>
+      <div className="service-detail-page" style={{ marginTop: "80px" }}>
+        {/* Hero Header area */}
+        <section
+          style={{
+            padding: "5rem 0",
+            background:
+              "linear-gradient(135deg, var(--section-alt) 0%, #FFFFFF 100%)",
+            borderBottom: "1px solid var(--border-light)",
+          }}
+        >
           <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "center",
-              gap: "1rem",
-              justifyContent: isCenteredService ? "center" : "flex-start",
-            }}
+            className="container"
+            style={{ textAlign: isCenteredService ? "center" : "left" }}
           >
-            {!hideHeroBadge && (
-              <span className="uppercase">SPECIALIZED MEDICAL PROGRAM</span>
-            )}
-            {subServiceTitle && (
-              <div
+            {!isCenteredService && (
+              <Link
+                to="/services"
+                className="flex align-center gap-1"
                 style={{
-                  background: "var(--accent)",
-                  color: "var(--primary)",
-                  padding: "0.25rem 1rem",
-                  borderRadius: "var(--radius-full)",
+                  marginBottom: "1.5rem",
                   display: "inline-flex",
-                  fontSize: "0.85rem",
-                  fontWeight: "600",
-                  marginLeft: isCenteredService ? 0 : "1rem",
+                  fontWeight: "500",
                 }}
               >
-                {subServiceTitle}
-              </div>
+                <ArrowLeft size={16} /> Back to Services
+              </Link>
             )}
-          </div>
 
-          <h1
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: "var(--h1-fs)",
-              marginTop: "1rem",
-              lineHeight: "1.2",
-            }}
-          >
-            {service.title}
-          </h1>
-          {!hideIntegratesLine && (
-            <p
+            <div
               style={{
-                fontSize: "1.1rem",
-                color: "var(--body-text)",
-                maxWidth: isCenteredService ? "900px" : "800px",
-                marginTop: "1rem",
-                lineHeight: "1.7",
-                marginLeft: isCenteredService ? "auto" : undefined,
-                marginRight: isCenteredService ? "auto" : undefined,
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+                gap: "1rem",
+                justifyContent: isCenteredService ? "center" : "flex-start",
               }}
             >
-              <strong>Integrates:</strong> {service.combines}
-            </p>
-          )}
-        </div>
-      </section>
+              {!hideHeroBadge && (
+                <span className="uppercase">SPECIALIZED MEDICAL PROGRAM</span>
+              )}
+              {subServiceTitle && (
+                <div
+                  style={{
+                    background: "var(--accent)",
+                    color: "var(--primary)",
+                    padding: "0.25rem 1rem",
+                    borderRadius: "var(--radius-full)",
+                    display: "inline-flex",
+                    fontSize: "0.85rem",
+                    fontWeight: "600",
+                    marginLeft: isCenteredService ? 0 : "1rem",
+                  }}
+                >
+                  {subServiceTitle}
+                </div>
+              )}
+            </div>
 
-      {/* Main Content Area */}
-      <section className="section" style={{ background: "var(--white)" }}>
-        <div className="container">
-          <div className="grid-12">
-            {/* Main Article Block */}
-            <div className={isCenteredService ? "col-12" : "col-8"}>
-              <div
+            <h1
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "var(--h1-fs)",
+                marginTop: "1rem",
+                lineHeight: "1.2",
+              }}
+            >
+              {service.title}
+            </h1>
+            {!hideIntegratesLine && (
+              <p
                 style={{
-                  paddingRight: isCenteredService ? 0 : "2rem",
-                  maxWidth: isCenteredService ? "900px" : undefined,
+                  fontSize: "1.1rem",
+                  color: "var(--body-text)",
+                  maxWidth: isCenteredService ? "900px" : "800px",
+                  marginTop: "1rem",
+                  lineHeight: "1.7",
                   marginLeft: isCenteredService ? "auto" : undefined,
                   marginRight: isCenteredService ? "auto" : undefined,
                 }}
               >
-                {/* Verbatim Article Content */}
+                <strong>Integrates:</strong> {service.combines}
+              </p>
+            )}
+          </div>
+        </section>
+
+        {/* Main Content Area */}
+        <section className="section" style={{ background: "var(--white)" }}>
+          <div className="container">
+            <div className="grid-12">
+              {/* Main Article Block */}
+              <div className={isCenteredService ? "col-12" : "col-8"}>
                 <div
-                  className="verbatim-article"
                   style={{
-                    lineHeight: "1.8",
-                    color: "var(--dark-text)",
-                    textAlign: isCenteredService ? "left" : undefined,
+                    paddingRight: isCenteredService ? 0 : "2rem",
+                    maxWidth: isCenteredService ? "900px" : undefined,
+                    marginLeft: isCenteredService ? "auto" : undefined,
+                    marginRight: isCenteredService ? "auto" : undefined,
                   }}
                 >
-                  <h2
+                  {/* Verbatim Article Content */}
+                  <div
+                    className="verbatim-article"
                     style={{
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "1.65rem",
-                      color: "var(--primary)",
-                      marginBottom: "2rem",
-                      lineHeight: "1.4",
+                      lineHeight: "1.8",
+                      color: "var(--dark-text)",
+                      textAlign: isCenteredService ? "left" : undefined,
                     }}
                   >
-                    {articleTitle}
-                  </h2>
-
-                  {service.paragraphs.map((p, idx) => (
-                    <p
-                      key={idx}
+                    <h2
                       style={{
-                        marginBottom: "1.5rem",
-                        fontSize: "1.05rem",
-                        whiteSpace: "pre-line",
+                        fontFamily: "var(--font-heading)",
+                        fontSize: "1.65rem",
+                        color: "var(--primary)",
+                        marginBottom: "2rem",
+                        lineHeight: "1.4",
                       }}
                     >
-                      {p}
-                    </p>
-                  ))}
+                      {articleTitle}
+                    </h2>
 
-                  {service.sections.map((section, idx) => {
-                    const hideSectionHeading =
-                      (targetSlug === "fertility-preconception-care" ||
-                        targetSlug === "holistic-pregnancy-wellness") &&
-                      [
-                        "Conclusion",
-                        "Call to Action",
-                        "Conclusion and Call to Action",
-                        "Call to Action (CTA)",
-                      ].includes(section.subHeading);
+                    {service.paragraphs.map((p, idx) => (
+                      <p
+                        key={idx}
+                        style={{
+                          marginBottom: "1.5rem",
+                          fontSize: "1.05rem",
+                          whiteSpace: "pre-line",
+                        }}
+                      >
+                        {p}
+                      </p>
+                    ))}
 
-                    return (
-                      <div key={idx} style={{ marginTop: "3rem" }}>
-                        {!hideSectionHeading && (
-                          <h3
+                    {service.sections.map((section, idx) => {
+                      const hideSectionHeading =
+                        (targetSlug === "fertility-preconception-care" ||
+                          targetSlug === "holistic-pregnancy-wellness") &&
+                        [
+                          "Conclusion",
+                          "Call to Action",
+                          "Conclusion and Call to Action",
+                          "Call to Action (CTA)",
+                        ].includes(section.subHeading);
+
+                      return (
+                        <div key={idx} style={{ marginTop: "3rem" }}>
+                          {!hideSectionHeading && (
+                            <h3
+                              style={{
+                                fontFamily: "var(--font-heading)",
+                                fontSize: "1.5rem",
+                                color: "var(--primary)",
+                                marginBottom: "1.25rem",
+                                borderLeft: "4px solid var(--secondary)",
+                                paddingLeft: "1rem",
+                              }}
+                            >
+                              {section.subHeading}
+                            </h3>
+                          )}
+                          <p
                             style={{
-                              fontFamily: "var(--font-heading)",
-                              fontSize: "1.5rem",
-                              color: "var(--primary)",
-                              marginBottom: "1.25rem",
-                              borderLeft: "4px solid var(--secondary)",
-                              paddingLeft: "1rem",
+                              whiteSpace: "pre-line",
+                              fontSize: "1.05rem",
+                              marginBottom: "1.5rem",
                             }}
                           >
-                            {section.subHeading}
-                          </h3>
-                        )}
-                        <p
-                          style={{
-                            whiteSpace: "pre-line",
-                            fontSize: "1.05rem",
-                            marginBottom: "1.5rem",
-                          }}
-                        >
-                          {section.content}
-                        </p>
-                      </div>
-                    );
-                  })}
+                            {section.content}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Sticky Sidebar */}
-            {!isCenteredService && (
-              <div className="col-4">
-                <div className="sidebar-card">
-                  {isScanOrDiagnostic && (
-                    <div
-                      style={{
-                        borderRadius: "var(--radius-md)",
-                        overflow: "hidden",
-                        boxShadow: "var(--shadow-sm)",
-                        marginBottom: "2rem",
-                        height: "240px",
-                      }}
-                    >
-                      <img
-                        src={scanCentreImg}
-                        alt="Ultrasound Pregnancy Scanning Centre Room"
+              {/* Sticky Sidebar */}
+              {!isCenteredService && (
+                <div className="col-4">
+                  <div className="sidebar-card">
+                    {isScanOrDiagnostic && (
+                      <div
                         style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
+                          borderRadius: "var(--radius-md)",
+                          overflow: "hidden",
+                          boxShadow: "var(--shadow-sm)",
+                          marginBottom: "2rem",
+                          height: "240px",
                         }}
-                      />
-                    </div>
-                  )}
+                      >
+                        <img
+                          src={scanCentreImg}
+                          alt="Ultrasound Pregnancy Scanning Centre Room"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </div>
+                    )}
 
-                  <h3
-                    style={{
-                      fontSize: "1.2rem",
-                      color: "var(--primary)",
-                      marginBottom: "1.5rem",
-                    }}
-                  >
-                    Book Clinical Care
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: "0.9rem",
-                      color: "var(--body-text)",
-                      marginBottom: "1.5rem",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    Connect with our reproductive specialists, fetal medicine
-                    consultants, and obstetricians for personalized,
-                    evidence-based care.
-                  </p>
-
-                  <div
-                    style={{
-                      marginBottom: "2rem",
-                      borderTop: "1px solid var(--border-light)",
-                      paddingTop: "1.5rem",
-                    }}
-                  >
-                    <h4
+                    <h3
                       style={{
-                        fontSize: "0.8rem",
-                        textTransform: "uppercase",
-                        color: "var(--secondary)",
-                        marginBottom: "0.5rem",
+                        fontSize: "1.2rem",
+                        color: "var(--primary)",
+                        marginBottom: "1.5rem",
                       }}
                     >
-                      Clinically Integrated Services:
-                    </h4>
+                      Book Clinical Care
+                    </h3>
                     <p
                       style={{
-                        fontSize: "0.85rem",
-                        color: "var(--dark-text)",
-                        margin: 0,
+                        fontSize: "0.9rem",
+                        color: "var(--body-text)",
+                        marginBottom: "1.5rem",
                         lineHeight: "1.6",
                       }}
                     >
-                      {service.combines}
+                      Connect with our reproductive specialists, fetal medicine
+                      consultants, and obstetricians for personalized,
+                      evidence-based care.
                     </p>
+
+                    <div
+                      style={{
+                        marginBottom: "2rem",
+                        borderTop: "1px solid var(--border-light)",
+                        paddingTop: "1.5rem",
+                      }}
+                    >
+                      <h4
+                        style={{
+                          fontSize: "0.8rem",
+                          textTransform: "uppercase",
+                          color: "var(--secondary)",
+                          marginBottom: "0.5rem",
+                        }}
+                      >
+                        Clinically Integrated Services:
+                      </h4>
+                      <p
+                        style={{
+                          fontSize: "0.85rem",
+                          color: "var(--dark-text)",
+                          margin: 0,
+                          lineHeight: "1.6",
+                        }}
+                      >
+                        {service.combines}
+                      </p>
+                    </div>
+
+                    <Button
+                      to="/book-appointment"
+                      variant="primary"
+                      style={{ width: "100%" }}
+                    >
+                      Book Appointment
+                    </Button>
                   </div>
-
-                  <Button
-                    to="/book-appointment"
-                    variant="primary"
-                    style={{ width: "100%" }}
-                  >
-                    Book Appointment
-                  </Button>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <CTASection />
-    </div>
+        <CTASection />
+      </div>
+    </>
   );
 }
