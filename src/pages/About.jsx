@@ -183,6 +183,63 @@ export default function About() {
                       </p>
                     ))}
 
+                    {/* Profile Sections with Points */}
+                    {doc.profileSections && doc.profileSections.length > 0 && (
+                      <div
+                        style={{ marginTop: "2.5rem", marginBottom: "2rem" }}
+                      >
+                        {doc.profileSections.map((sec, secIdx) => (
+                          <div key={secIdx} style={{ marginBottom: "1.5rem" }}>
+                            <h4
+                              style={{
+                                fontSize: "1.15rem",
+                                fontWeight: "600",
+                                color: "var(--primary)",
+                                marginBottom: "0.75rem",
+                                fontFamily: "var(--font-heading)",
+                              }}
+                            >
+                              {sec.heading}
+                            </h4>
+                            <ul
+                              style={{
+                                listStyle: "none",
+                                padding: "0",
+                                margin: "0",
+                              }}
+                            >
+                              {sec.points.map((point, pointIdx) => (
+                                <li
+                                  key={pointIdx}
+                                  style={{
+                                    fontSize: "0.95rem",
+                                    lineHeight: "1.6",
+                                    color: "var(--body-text)",
+                                    marginBottom: "0.5rem",
+                                    paddingLeft: "1.5rem",
+                                    position: "relative",
+                                  }}
+                                >
+                                  <span
+                                    style={{
+                                      position: "absolute",
+                                      left: "0",
+                                      top: "0.25rem",
+                                      color: "var(--primary)",
+                                      fontWeight: "bold",
+                                    }}
+                                  >
+                                    ●
+                                  </span>
+                                  {point}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
                     {doc.id === "dr-parimalam-ramanathan" && (
                       <div
                         className="doc-video-stack"
@@ -221,8 +278,7 @@ export default function About() {
                     )}
 
                     {/* CV Subsections */}
-                    {doc.id === "dr-parimalam-ramanathan" &&
-                    doc.timelineIntro ? (
+                    {doc.timelineIntro ? (
                       <div className="doc-timeline-wrapper">
                         <div className="doc-timeline-intro">
                           <span className="doc-timeline-label">

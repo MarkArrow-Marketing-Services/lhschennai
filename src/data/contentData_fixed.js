@@ -223,46 +223,6 @@ export const doctorsData = [
       "Dr. Leonard Sagayanathan is a highly experienced radiologist and fetal medicine specialist with over 22+ years of experience in clinical practice. He is among the first Indian doctors to receive the Fellowship in Fetal Medicine from the Fetal Medicine Foundation (FMF) based in United Kingdom, where he trained under the Professor Kypros Nicolaides between 2004 to 2007. His expertise spans advanced fetal care, musculoskeletal (MSK) ultrasound, and general radiology.",
       "He holds a specialization in the fetal care and musculoskeletal ultrasound, with certification from the European Society of Musculoskeletal Radiology. His diagnostic proficiency includes the urology, vascular, general, and small parts ultrasound. Additionally, Dr. Leonard has contributed to medical research, specifically in nuchal translucency scans and cervical screening for preterm labor during his tenure period at King's College Hospital in London, UK",
     ],
-    profileSections: [
-      {
-        heading: "Professional Overview",
-        points: [
-          "Highly experienced radiologist and fetal medicine specialist",
-          "Over 22+ years of clinical practice globally",
-          "Among the first Indian doctors to receive Fellowship in Fetal Medicine from FMF, UK",
-          "Trained under Professor Kypros Nicolaides (2004-2007) - world-renowned fetal medicine expert",
-        ],
-      },
-      {
-        heading: "Core Expertise & Specializations",
-        points: [
-          "Advanced fetal medicine and comprehensive fetal care",
-          "Musculoskeletal (MSK) ultrasound - certified and specialized",
-          "General radiology across multiple modalities",
-          "Obstetric ultrasound - NT scans, TIFFA, and anomaly detection",
-          "Vascular and urological imaging",
-          "Small parts ultrasound imaging",
-        ],
-      },
-      {
-        heading: "Qualifications & Professional Certifications",
-        points: [
-          "Fellowship in Fetal Medicine - Fetal Medicine Foundation, United Kingdom",
-          "Certification in Obstetric Ultrasound - Royal College of Obstetricians & Gynaecologists (RCOG) & Royal College of Radiologists (RCR), UK",
-          "Certification in Musculoskeletal Ultrasound - European Society of Musculoskeletal Radiology",
-          "DMRD & DNB qualifications",
-        ],
-      },
-      {
-        heading: "Research & Clinical Contributions",
-        points: [
-          "Contributed to research in nuchal translucency (NT) scans - advancing screening protocols",
-          "Research in cervical screening for preterm labor assessment and prevention",
-          "Published clinical contributions on fetal anomaly detection",
-          "Research tenure at King's College Hospital, London - UK's leading fetal medicine institution",
-        ],
-      },
-    ],
     sections: [
       {
         heading: "Career Synopsis (1998-Present)",
