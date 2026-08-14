@@ -7,6 +7,7 @@ import {
   detailedServices,
   serviceKeywords,
 } from "../data/contentData";
+import doctorConsultationImg from "../assets/images/happy-indian-female-doctor-shaking-hands-with-patient-consultation-hospital_1257902-8805.avif";
 import SectionTitle from "../components/common/SectionTitle";
 import ServiceCard from "../components/common/ServiceCard";
 import CTASection from "../components/common/CTASection";
@@ -193,6 +194,7 @@ export default function Services() {
                 title="Family Planning & Sterilisation Services"
                 description="Comprehensive counseling and clinical guidance for family planning and sterilization procedures by experienced specialists."
                 to="/services/family-planning-sterilisation"
+                image={doctorConsultationImg}
               />
             </div>
           </div>
