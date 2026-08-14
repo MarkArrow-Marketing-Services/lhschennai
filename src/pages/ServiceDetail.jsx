@@ -150,15 +150,15 @@ export default function ServiceDetail() {
     "pregnancy-maternal-care",
     "diagnostics-testing",
   ].includes(slug);
-  const hideIntegratesLine = [
-    "fertility-preconception-care",
-    "holistic-pregnancy-wellness",
-  ].includes(targetSlug);
-  const articleTitle =
-    targetSlug === "holistic-pregnancy-wellness" &&
-    service?.articleTitle?.startsWith("Title: ")
-      ? service.articleTitle.replace(/^Title:\s*/, "")
-      : service?.articleTitle;
+  const normalizeArticleText = (text = "") =>
+    String(text)
+      .replace(/^Title:\s*/i, "")
+      .replace(/^Introduction:\s*/i, "")
+      .trim();
+  const articleTitle = normalizeArticleText(service?.articleTitle);
+  const normalizedParagraphs = (service?.paragraphs ?? []).map((paragraph) =>
+    normalizeArticleText(paragraph),
+  );
 
   useEffect(() => {
     if (subServiceTitle) {
@@ -195,19 +195,7 @@ export default function ServiceDetail() {
               borderBottom: "1px solid var(--border-light)",
             }}
           >
-            <div className="container">
-              <Link
-                to="/services"
-                className="flex align-center gap-1"
-                style={{
-                  marginBottom: "1.5rem",
-                  display: "inline-flex",
-                  fontWeight: "500",
-                }}
-              >
-                <ArrowLeft size={16} /> Back to Services
-              </Link>
-              <span className="uppercase">Women's Health Speciality</span>
+            <div className="container" style={{ textAlign: "center" }}>
               {subServiceTitle && (
                 <div
                   style={{
@@ -218,7 +206,7 @@ export default function ServiceDetail() {
                     display: "inline-flex",
                     fontSize: "0.85rem",
                     fontWeight: "600",
-                    marginLeft: "1rem",
+                    marginBottom: "1rem",
                   }}
                 >
                   {subServiceTitle}
@@ -228,21 +216,11 @@ export default function ServiceDetail() {
                 style={{
                   fontFamily: "var(--font-heading)",
                   fontSize: "var(--h1-fs)",
-                  marginTop: "1rem",
+                  marginTop: "0.25rem",
                 }}
               >
                 Family Planning & Sterilisation Services
               </h1>
-              <p
-                style={{
-                  fontSize: "1.1rem",
-                  color: "var(--body-text)",
-                  maxWidth: "700px",
-                  marginTop: "1rem",
-                }}
-              >
-                Combines Family Planning Doctor + Sterilisation Doctor
-              </p>
             </div>
           </section>
 
@@ -673,79 +651,34 @@ export default function ServiceDetail() {
             borderBottom: "1px solid var(--border-light)",
           }}
         >
-          <div
-            className="container"
-            style={{ textAlign: isCenteredService ? "center" : "left" }}
-          >
-            {!isCenteredService && (
-              <Link
-                to="/services"
-                className="flex align-center gap-1"
+          <div className="container" style={{ textAlign: "center" }}>
+            {subServiceTitle && (
+              <div
                 style={{
-                  marginBottom: "1.5rem",
+                  background: "var(--accent)",
+                  color: "var(--primary)",
+                  padding: "0.25rem 1rem",
+                  borderRadius: "var(--radius-full)",
                   display: "inline-flex",
-                  fontWeight: "500",
+                  fontSize: "0.85rem",
+                  fontWeight: "600",
+                  marginBottom: "1rem",
                 }}
               >
-                <ArrowLeft size={16} /> Back to Services
-              </Link>
+                {subServiceTitle}
+              </div>
             )}
-
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-                gap: "1rem",
-                justifyContent: isCenteredService ? "center" : "flex-start",
-              }}
-            >
-              {!hideHeroBadge && (
-                <span className="uppercase">SPECIALIZED MEDICAL PROGRAM</span>
-              )}
-              {subServiceTitle && (
-                <div
-                  style={{
-                    background: "var(--accent)",
-                    color: "var(--primary)",
-                    padding: "0.25rem 1rem",
-                    borderRadius: "var(--radius-full)",
-                    display: "inline-flex",
-                    fontSize: "0.85rem",
-                    fontWeight: "600",
-                    marginLeft: isCenteredService ? 0 : "1rem",
-                  }}
-                >
-                  {subServiceTitle}
-                </div>
-              )}
-            </div>
 
             <h1
               style={{
                 fontFamily: "var(--font-heading)",
                 fontSize: "var(--h1-fs)",
-                marginTop: "1rem",
+                marginTop: "0.25rem",
                 lineHeight: "1.2",
               }}
             >
               {service.title}
             </h1>
-            {!hideIntegratesLine && (
-              <p
-                style={{
-                  fontSize: "1.1rem",
-                  color: "var(--body-text)",
-                  maxWidth: isCenteredService ? "900px" : "800px",
-                  marginTop: "1rem",
-                  lineHeight: "1.7",
-                  marginLeft: isCenteredService ? "auto" : undefined,
-                  marginRight: isCenteredService ? "auto" : undefined,
-                }}
-              >
-                <strong>Integrates:</strong> {service.combines}
-              </p>
-            )}
           </div>
         </section>
 
@@ -784,7 +717,7 @@ export default function ServiceDetail() {
                       {articleTitle}
                     </h2>
 
-                    {service.paragraphs.map((p, idx) => (
+                    {normalizedParagraphs.map((p, idx) => (
                       <p
                         key={idx}
                         style={{
@@ -798,15 +731,14 @@ export default function ServiceDetail() {
                     ))}
 
                     {service.sections.map((section, idx) => {
-                      const hideSectionHeading =
-                        (targetSlug === "fertility-preconception-care" ||
-                          targetSlug === "holistic-pregnancy-wellness") &&
-                        [
-                          "Conclusion",
-                          "Call to Action",
-                          "Conclusion and Call to Action",
-                          "Call to Action (CTA)",
-                        ].includes(section.subHeading);
+                      const hideSectionHeading = [
+                        "Conclusion",
+                        "Conclusion and Call to Action",
+                        "Conclusion & Call to Action",
+                        "Call to Action",
+                        "Call to Action (CTA)",
+                        "Book Your Consultation Today",
+                      ].includes(section.subHeading);
 
                       return (
                         <div key={idx} style={{ marginTop: "3rem" }}>
