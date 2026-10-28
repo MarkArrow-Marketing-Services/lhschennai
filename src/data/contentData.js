@@ -26,13 +26,12 @@ export const homeContent = {
       label: "Years trusted",
       detail: "Over 31 Years of Medical Expertise",
     },
-    {
-      value: "7000+",
-      label: "patients",
-      detail: "7000+ Lives Impacted Positively",
-    },
     { value: "4.7", label: "STAR RATING", detail: "4.7 Rating on Google" },
     { value: "2+", label: "Branches", detail: "2+ Location" },
+  ],
+  patientExperience: [
+    { value: "7,000", label: "patients in India" },
+    { value: "10,000", label: "patients in UK practice" },
   ],
   introduction: [
     "London Harley Street Women, IVF & Fertility Centre is a trusted destination for complete women’s healthcare, providing the advanced fertility treatments with patient-centered care located at Perungudi and Thamblur OMR. Specializing in gynecology, obstetrics, reproductive medicine, and advanced IVF (In vitro fertilization) solutions, supporting women in every stage of life from adolescence to motherhood . With a strong focus on personalized treatment, our experienced doctors use the latest medical technologies and evidence-based medical practices to address a wide range of medical concerns, including infertility, PCOS, hormonal imbalances, high-risk pregnancies, and reproductive health disorders etc..,",
@@ -65,17 +64,13 @@ export const doctorsData = [
       "She is the Founder of London Harley Fertility and Women’s Health Centre, located in Perungudi (OMR, behind Apollo Hospital). Her clinical practice is inspired by the international standards, particularly the renowned London Harley Street model of evidence-based and ethical care.",
       "With a 16-years of successful medical career in the United Kingdom, Dr.Parimalam Ramanathan returned to Chennai to bring global expertise in the reproductive medicine and women’s health.",
     ],
-    timelineIntro: [
-      "Dr. Parimalam Ramanathan's academic, professional, and research journey.",
-      "Dr. Parimalam Ramanathan – Career Timeline",
-    ],
     timelineSections: [
       {
         heading: "Medical Education",
         items: [
-          "Completed MBBS – Tamil Nadu Medical University, India.",
-          "Completed DNB (Obstetrics & Gynaecology) – All India University, Delhi.",
-          "Completed MD – Tamil Nadu Medical University, India.",
+          "Earned MBBS – Tamil Nadu Medical University, India.",
+          "Earned DNB (Obstetrics & Gynaecology) – All India University, Delhi.",
+          "Earned MD – Tamil Nadu Medical University, India.",
         ],
       },
       {
@@ -113,6 +108,14 @@ export const doctorsData = [
           "Chronic pelvic pain.",
           "Cervical cancer management.",
           "Reproductive medicine.",
+          "Fertility and related treatments.",
+          "Gynaecological surgery.",
+          "Hysteroscopy.",
+          "Colposcopy.",
+          "Laparoscopy.",
+          "Hysterectomy.",
+          "Tubal ligation.",
+          "Family planning.",
         ],
       },
       {
@@ -141,7 +144,6 @@ export const doctorsData = [
         heading: "International Speaker",
         items: [
           "Presented at international conferences on topics such as:",
-          "United Kingdom",
           "Fertility in newly diagnosed breast cancer patients.",
           "Chronic pelvic pain management.",
           "Urine dipstick and C&S in pregnancy clinics (Birmingham).",
@@ -155,14 +157,6 @@ export const doctorsData = [
           "Cervical cancer management (European Society, France).",
           "Ectopic pregnancy (International Society of Obstetrics & Gynaecology, Czech Republic).",
         ],
-      },
-      {
-        heading: "Denmark",
-        items: ["Management of pregnancy of unknown location."],
-      },
-      {
-        heading: "Scotland",
-        items: ["Implementation of NICE guidelines."],
       },
       {
         heading: "Malaysia",
@@ -310,7 +304,13 @@ export const serviceCategories = [
     image: niptTestImg,
     items: [
       "Scan Centre",
-      "NT Scan",
+      "High-risk pregnancy scans",
+      "Nuchal translucency scans",
+      "Fetal scans",
+      "Abdominal scans",
+      "Thyroid scans",
+      "Salivary gland scans",
+      "Musculoskeletal ultrasound (USG)",
       "TIFFA Scan",
       "Anomaly Scan",
       "NIPT Test",
@@ -323,7 +323,13 @@ export const serviceCategories = [
     id: "wellness-programs",
     title: "Wellness & Support Services",
     image: yogaWomenImg,
-    items: ["Yoga for Pregnancy", "Physiotherapy", "Dietician for Pregnancy"],
+    items: [
+      "Yoga for Pregnancy",
+      "Physiotherapy",
+      "Dietician for Pregnancy",
+      "Labour management workshops",
+      "Postpartum and breastfeeding counselling",
+    ],
   },
 ];
 

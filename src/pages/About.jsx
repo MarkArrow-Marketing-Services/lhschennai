@@ -173,10 +173,11 @@ export default function About() {
                       <p
                         key={pIdx}
                         style={{
-                          fontSize: "1rem",
-                          lineHeight: "1.8",
-                          color: "var(--body-text)",
                           marginBottom: "1.5rem",
+                          color: "var(--dark-text)",
+                          fontSize: "1.05rem",
+                          fontWeight: 500,
+                          lineHeight: 1.85,
                         }}
                       >
                         {p}
@@ -278,22 +279,8 @@ export default function About() {
                     )}
 
                     {/* CV Subsections */}
-                    {doc.timelineIntro ? (
+                    {doc.timelineSections ? (
                       <div className="doc-timeline-wrapper">
-                        <div className="doc-timeline-intro">
-                          <span className="doc-timeline-label">
-                            Career Timeline
-                          </span>
-                          {doc.timelineIntro.map((line, lineIdx) => (
-                            <p
-                              key={lineIdx}
-                              className="doc-timeline-intro-text"
-                            >
-                              {line}
-                            </p>
-                          ))}
-                        </div>
-
                         <div className="doc-timeline-listing">
                           {doc.timelineSections.map((sec, secIdx) => (
                             <div key={secIdx} className="doc-timeline-card">

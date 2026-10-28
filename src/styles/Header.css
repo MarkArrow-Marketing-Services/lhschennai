@@ -23,6 +23,20 @@ header.scrolled {
   border-bottom: 1px solid var(--border-gold);
 }
 
+header.scrolled .logo-text,
+header.scrolled .logo-title,
+header.scrolled .logo-subtitle,
+header.scrolled .logo-location,
+header.scrolled .logo-branches {
+  line-height: 0.95;
+}
+
+header.scrolled .logo-subtitle,
+header.scrolled .logo-location,
+header.scrolled .logo-branches {
+  margin-top: 1px;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -61,18 +75,18 @@ header.scrolled {
 }
 
 .logo-title {
-  font-size: 1.06rem;
-  font-weight: 800;
+  font-size: 1.12rem;
+  font-weight: 900;
   text-transform: uppercase;
   color: var(--primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   line-height: 1.02;
 }
 
 .logo-subtitle {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--dark-text);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--primary);
   margin-top: 2px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -80,8 +94,8 @@ header.scrolled {
 
 .logo-location,
 .logo-branches {
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.76rem;
+  font-weight: 700;
   color: var(--secondary);
   margin-top: 2px;
   letter-spacing: 0.06em;
@@ -372,8 +386,8 @@ header.scrolled .nav-item > a {
   }
 
   .logo-title {
-    font-size: 0.75rem;
-    font-weight: 800;
+    font-size: 0.78rem;
+    font-weight: 900;
     text-transform: uppercase;
     color: var(--primary);
     letter-spacing: -0.01em;
@@ -388,9 +402,9 @@ header.scrolled .nav-item > a {
   }
 
   .logo-subtitle {
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: var(--dark-text);
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: var(--primary);
     margin-top: 2px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -401,8 +415,8 @@ header.scrolled .nav-item > a {
 
   .logo-location,
   .logo-branches {
-    font-size: 0.6rem;
-    font-weight: 600;
+    font-size: 0.62rem;
+    font-weight: 700;
     color: var(--secondary);
     margin-top: 1px;
     letter-spacing: 0.04em;
@@ -432,19 +446,19 @@ header.scrolled .nav-item > a {
   }
 
   .logo-title {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     -webkit-line-clamp: 2;
     line-clamp: 2;
   }
 
   .logo-subtitle {
-    font-size: 0.6rem;
+    font-size: 0.62rem;
     margin-top: 1px;
   }
 
   .logo-location,
   .logo-branches {
-    font-size: 0.55rem;
+    font-size: 0.57rem;
     margin-top: 0px;
   }
 
@@ -466,19 +480,19 @@ header.scrolled .nav-item > a {
   }
 
   .logo-title {
-    font-size: 0.65rem;
+    font-size: 0.67rem;
     -webkit-line-clamp: 2;
     line-clamp: 2;
   }
 
   .logo-subtitle {
-    font-size: 0.55rem;
+    font-size: 0.57rem;
     margin-top: 1px;
   }
 
   .logo-location,
   .logo-branches {
-    font-size: 0.5rem;
+    font-size: 0.52rem;
     margin-top: 0px;
   }
 }

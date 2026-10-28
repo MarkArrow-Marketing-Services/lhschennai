@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet-async";
 import {
   ShieldCheck,
   Heart,
-  CheckCircle2,
   ChevronRight,
   MapPin,
 } from "lucide-react";
@@ -23,7 +22,6 @@ import Button from "../components/common/Button";
 import SectionTitle from "../components/common/SectionTitle";
 import DoctorCard from "../components/common/DoctorCard";
 import ServiceCard from "../components/common/ServiceCard";
-import BlogCard from "../components/common/BlogCard";
 import CTASection from "../components/common/CTASection";
 import heroImg from "../assets/images/A_realistic_Indian_modern_fertility_202605192035.jpeg";
 import "../styles/Home.css";
@@ -52,6 +50,7 @@ export default function Home() {
 
   // Defensive copies to avoid runtime crashes when content data is missing
   const stats = homeContent?.stats ?? [];
+  const patientExperience = homeContent?.patientExperience ?? [];
   const introduction = homeContent?.introduction ?? [];
   const clinicParagraphs = clinicAboutData?.paragraphs ?? [];
   const serviceCats = Array.isArray(serviceCategories) ? serviceCategories : [];
@@ -79,9 +78,6 @@ export default function Home() {
           <div className="container">
             <div className="hero-grid">
               <div className="hero-text-col">
-                <span className="hero-subtitle">
-                  LONDON HARLEY STREET STANDARDS IN CHENNAI
-                </span>
                 <h1 className="hero-title">{homeContent.h1}</h1>
                 <p className="hero-desc">{homeContent.description}</p>
                 <div className="hero-buttons">
@@ -92,10 +88,26 @@ export default function Home() {
                     Our Services
                   </Button>
                 </div>
+                <div className="hero-specialties">
+                  <h2 className="hero-specialties-title">Specialties</h2>
+                  <ul className="hero-specialties-list">
+                    <li>Expert gynaecology</li>
+                    <li>IVF (In Vitro Fertilisation)</li>
+                    <li>High-risk fertility</li>
+                    <li>High-risk pregnancies</li>
+                  </ul>
+                </div>
               </div>
 
               <div className="hero-image-col">
                 <div className="hero-blob"></div>
+
+                <div className="hero-img-wrapper">
+                  <img
+                    src={heroImg}
+                    alt="London Harley Street Women & Fertility Centre - Mother and Child"
+                  />
+                </div>
 
                 <div className="hero-card">
                   <div className="hero-badge-grid">
@@ -123,14 +135,6 @@ export default function Home() {
                     every step.
                   </p>
                 </div>
-
-                {/* High-Resolution Hero Visual Asset */}
-                <div className="hero-img-wrapper">
-                  <img
-                    src={heroImg}
-                    alt="London Harley Street Women & Fertility Centre - Mother and Child"
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -153,6 +157,21 @@ export default function Home() {
                   <p className="stats-desc">{stat.detail}</p>
                 </div>
               ))}
+            </div>
+            <div className="patient-experience reveal">
+              <h3 className="patient-experience-title">Patient Experience</h3>
+              <div className="patient-experience-grid">
+                {patientExperience.map((item) => (
+                  <div className="patient-experience-card" key={item.label}>
+                    <span className="patient-experience-number">
+                      {item.value}
+                    </span>
+                    <span className="patient-experience-label">
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -248,11 +267,10 @@ export default function Home() {
         >
           <div className="container">
             <SectionTitle
-              title="Comprehensive Medical Services"
-              subtitle="Clinical Excellence"
+              title="Clinical Excellence in Comprehensive Medical Services"
             />
 
-            <div className="grid-12">
+            <div className="grid-12 home-category-grid">
               {serviceCats.map((cat, idx) => (
                 <div key={cat.id} className="col-3 reveal reveal-delay-1">
                   <div className="home-category-card">
@@ -267,34 +285,21 @@ export default function Home() {
                       {cat.title}
                     </h3>
                     <ul
-                      style={{
-                        listStyle: "none",
-                        padding: 0,
-                        margin: "0 0 2rem 0",
-                        flexGrow: 1,
-                      }}
+                      className={`home-category-list ${
+                        cat.id === "diagnostics-testing"
+                          ? "home-category-list--diagnostics"
+                          : ""
+                      }`}
                     >
                       {cat.items.map((item, key) => (
-                        <li
-                          key={key}
-                          style={{
-                            fontSize: "0.9rem",
-                            color: "var(--dark-text)",
-                            marginBottom: "0.75rem",
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.5rem",
-                          }}
-                        >
-                          <CheckCircle2 size={14} color="var(--primary)" />
-                          <span>{item}</span>
+                        <li key={key} className="home-category-list-item">
+                          {item}
                         </li>
                       ))}
                     </ul>
                     <Link
                       to={`/services/${cat.id}`}
                       className="service-card-link"
-                      style={{ marginTop: "auto" }}
                     >
                       <span>Explore Category</span>
                       <ChevronRight size={16} />
@@ -532,39 +537,6 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Latest Insights Section */}
-        <section
-          className="insights-section section"
-          style={{ background: "var(--white)" }}
-        >
-          <div className="container">
-            <SectionTitle
-              title="Latest Medical Insights & Education"
-              subtitle="Knowledge & Wellness"
-            />
-
-            <div className="grid-12">
-              {detailedServices.slice(0, 3).map((post, idx) => (
-                <div key={post.slug} className="col-4 reveal reveal-delay-1">
-                  <BlogCard
-                    slug={post.slug}
-                    title={post.articleTitle.replace("Title: ", "")}
-                    category={post.title}
-                    snippet={post.paragraphs[0].substring(0, 120) + "..."}
-                    image={post.image}
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center" style={{ marginTop: "4rem" }}>
-              <Button to="/insights" variant="primary">
-                Browse All Health Information
-              </Button>
             </div>
           </div>
         </section>

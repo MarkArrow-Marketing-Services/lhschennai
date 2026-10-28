@@ -1,29 +1,13 @@
 /* src/pages/Insights.jsx */
-import { useEffect, useState } from "react";
-import { Link, useLocation, useParams, Navigate } from "react-router-dom";
-import {
-  ChevronRight,
-  ArrowLeft,
-  Calendar,
-  User,
-  Clock,
-  BookOpen,
-} from "lucide-react";
+import { useEffect } from "react";
+import { Link, useParams, Navigate } from "react-router-dom";
+import { ArrowLeft, User, Clock } from "lucide-react";
 import { detailedServices } from "../data/contentData";
-import SectionTitle from "../components/common/SectionTitle";
-import BlogCard from "../components/common/BlogCard";
 import Button from "../components/common/Button";
 import CTASection from "../components/common/CTASection";
 
 export default function Insights() {
   const { slug } = useParams();
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const categoryFilter = queryParams.get("category");
-
-  const [selectedCategory, setSelectedCategory] = useState(
-    categoryFilter || "all",
-  );
 
   useEffect(() => {
     if (slug) {
@@ -35,10 +19,6 @@ export default function Insights() {
       document.title = "Health Insights & Education | London Harley Street";
     }
   }, [slug]);
-
-  useEffect(() => {
-    setSelectedCategory(categoryFilter || "all");
-  }, [categoryFilter]);
 
   // Helper to determine blog category
   const getCategoryName = (svcSlug) => {
@@ -217,24 +197,6 @@ export default function Insights() {
     );
   }
 
-  // Categories list
-  const categoriesList = [
-    "all",
-    "Fertility",
-    "Pregnancy",
-    "Gynecology",
-    "Diagnostics",
-    "Wellness",
-  ];
-
-  // Filter articles
-  const filteredArticles = detailedServices.filter((svc) => {
-    if (selectedCategory === "all") return true;
-    return (
-      getCategoryName(svc.slug).toLowerCase() === selectedCategory.toLowerCase()
-    );
-  });
-
   return (
     <div className="insights-page" style={{ marginTop: "80px" }}>
       {/* Hero Header */}
@@ -267,73 +229,18 @@ export default function Insights() {
               fontSize: "1.05rem",
             }}
           >
-            Evidence-based medical publications, health guides, and fertility
-            education written by our clinical experts.
+            Medical insights and educational resources will be published here.
           </p>
         </div>
       </section>
 
-      {/* Category Filter Navigation */}
-      <section
-        style={{
-          background: "var(--white)",
-          borderBottom: "1px solid var(--border-light)",
-          padding: "1.5rem 0",
-        }}
-      >
-        <div
-          className="container flex justify-center gap-2"
-          style={{ flexWrap: "wrap" }}
-        >
-          {categoriesList.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              style={{
-                background:
-                  selectedCategory.toLowerCase() === cat.toLowerCase()
-                    ? "var(--primary)"
-                    : "transparent",
-                color:
-                  selectedCategory.toLowerCase() === cat.toLowerCase()
-                    ? "var(--white)"
-                    : "var(--primary)",
-                border: "1px solid var(--primary)",
-                padding: "0.5rem 1.5rem",
-                borderRadius: "var(--radius-full)",
-                fontSize: "0.9rem",
-                fontWeight: "500",
-                cursor: "pointer",
-                transition: "var(--transition-fast)",
-              }}
-            >
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* Blogs Grid */}
       <section className="section" style={{ background: "var(--white)" }}>
         <div className="container">
-          <div className="grid-12">
-            {filteredArticles.length > 0 ? (
-              filteredArticles.map((svc) => (
-                <div key={svc.slug} className="col-4">
-                  <BlogCard
-                    slug={svc.slug}
-                    title={svc.articleTitle.replace("Title: ", "")}
-                    category={getCategoryName(svc.slug)}
-                    snippet={svc.paragraphs[0].substring(0, 140) + "..."}
-                    image={svc.image}
-                  />
-                </div>
-              ))
-            ) : (
-              <div className="col-12 text-center" style={{ padding: "4rem 0" }}>
-                <h3>No articles found in this category.</h3>
-              </div>
-            )}
+          <div className="text-center" style={{ padding: "3rem 0" }}>
+            <h2>New articles coming soon</h2>
+            <p style={{ color: "var(--body-text)" }}>
+              Please check back for future health and wellness articles.
+            </p>
           </div>
         </div>
       </section>
